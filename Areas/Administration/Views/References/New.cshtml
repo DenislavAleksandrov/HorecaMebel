@@ -1,0 +1,43 @@
+﻿@using HorecaMebel.Areas.Administration.Models.ViewModels.References
+
+@model NewReferenceViewModel
+
+<div class="main-content">
+    <div class="wrapper">
+
+        <label>Image*</label>
+        <div class="row">
+            <div class="images-placeholder new">
+                <div class="main" data-selector="ImageContainer"></div>
+            </div>
+            <div>
+                <div class="upload-file form-upload">
+                    <input type="file" name="file" data-selector="fileUploadValue" />
+
+                    <span class="error" data-selector="imageFiledError">&nbsp;</span>
+                </div>
+
+                <input type="button" value="Upload" data-selector="BtnUploadImage" class="action-btn upload" />
+
+            </div>
+        </div>
+
+        <div class="clearfix">
+            <a class="action-btn" data-selector="Save">SAVE</a>
+        </div>
+
+    </div>   
+</div>     
+<script src="~/Areas/Administration/Script/References/NewReference.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        NewReference.Init();
+
+        document.onkeydown = function (event) {
+            if (event.keyCode == 13) {
+                NewReference.Save();
+            }
+        }
+    });
+</script>

@@ -1,0 +1,79 @@
+﻿@model HorecaMebel.Areas.Administration.Models.ViewModels.Armchair.AdditionalImagesArmchairViewModel
+
+
+<div class="main-content">
+    <div class="wrapper">
+        <div class="row">          
+            <div>
+                <div class="upload-file form-upload">
+                    <input type="file" name="file" data-selector="fileUploadValue" />
+
+                    <span class="error" data-selector="imageFiledError">&nbsp;</span>
+                </div>
+
+                <input data-armchairId="@Model.ArmchairId" type="button" value="Upload" class="action-btn upload" data-selector="BtnUploadImage" />
+
+            </div>
+        </div>
+
+
+        @if (Model != null)
+        {
+            foreach (var item in Model.ArmchairsAdditionImages)
+            {
+                <div>
+                    <img src="@item.Imagepath" width="200" height="200" />
+                    <input type="button" value="DELETE" data-selector="DeleteAdditionalImage"
+                           data-id="@item.id" data-armchairid="@item.ArmchairId" class="action-btn upload" />
+                </div>
+            }
+        }
+        
+    </div>
+</div>
+        
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+        $('[data-selector="DeleteAdditionalImage"]').on('click', function () {
+
+            var data = new FormData();
+            data.append('id', $(this).attr('data-id'));
+            data.append('armchairId', $(this).attr('data-armchairid'));
+
+            $.ajax({
+                url: '/Administration/Armchairs/DeleteAdditionalImage',
+                data: data,
+                type: 'POST',
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    if (data.Status)
+                    {
+                        location.reload();
+                    }                                        
+                }
+            });
+        });
+
+        
+        $('[data-selector="BtnUploadImage"]').on('click', function () {
+
+            var data = new FormData();
+            data.append('file', $('[data-selector="fileUploadValue"]')[0].files[0]);
+            data.append('armchairId', $(this).attr('data-armchairId'));
+            $.ajax({
+                url: '/Administration/Armchairs/AddAdditionalImage',
+                data: data,
+                type: 'POST',
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    location.reload();
+                }
+            });
+        });
+    });
+</script>
+
+

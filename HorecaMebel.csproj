@@ -1,0 +1,736 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6236B533-724F-46F0-82F0-2715C51D9841}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HorecaMebel</RootNamespace>
+    <AssemblyName>HorecaMebel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC4.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.30506.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.30506.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.30506.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Attr\HorecaAuthorisation.cs" />
+    <Compile Include="Areas\Administration\Controllers\AdminBaseControllerController.cs" />
+    <Compile Include="Areas\Administration\Controllers\AdminHomeController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ArmchairsController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ChairsController.cs" />
+    <Compile Include="Areas\Administration\Controllers\CubeSeatController.cs" />
+    <Compile Include="Areas\Administration\Controllers\LogInController.cs" />
+    <Compile Include="Areas\Administration\Controllers\OrderController.cs" />
+    <Compile Include="Areas\Administration\Controllers\PromotionsController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ReferencesController.cs" />
+    <Compile Include="Areas\Administration\Controllers\SofasController.cs" />
+    <Compile Include="Areas\Administration\Models\BaseModel.cs" />
+    <Compile Include="Areas\Administration\Models\Enums.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Armchair\AdditionalImagesArmchair.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Armchair\ArmchairsViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Armchair\EditArmchairViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Armchair\NewArmchairViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Chair\AdditionalImagesChair.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Chair\ChairsViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Chair\EditChairViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Chair\NewChairViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\CubeSeat\AdditionalImagesCubeSeatViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\CubeSeat\CubeSeatEditViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\CubeSeat\CubeSeatsViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Orders\OrdersTableViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Orders\OrderViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Promotion\EditPromotionViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\HomeIndexViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Promotion\NewPromotionViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Promotion\PromotionsViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\MenuItem.cs" />
+    <Compile Include="Areas\Administration\Models\UserDetails.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\References\NewReferenceViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\References\ReferencesViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Sofa\AdditionalImagesSofa.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Sofa\EditSofaViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Sofa\NewSofaViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\Sofa\SofasViewModel.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\ArmchairsAppController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BasketController.cs" />
+    <Compile Include="Controllers\ChairsAppController.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\CubeSeatsAppController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReferencesController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\SofasAppController.cs" />
+    <Compile Include="Controllers\TermsAndConditionsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\About\AboutIndexViewModel.cs" />
+    <Compile Include="Models\Administration\Configurations.cs" />
+    <Compile Include="Models\Administration\IPromotions.cs" />
+    <Compile Include="Models\Administration\User.cs" />
+    <Compile Include="Models\Administration\Utilities.cs" />
+    <Compile Include="Models\Armchairs\EditArmchair.cs" />
+    <Compile Include="Models\Armchairs\ListOfArmchairs.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Basket\Basket.cs" />
+    <Compile Include="Models\Basket\ConfirmationPage.cs" />
+    <Compile Include="Models\Chairs\EditChairViewModel.cs" />
+    <Compile Include="Models\Chairs\ListOfChairsViewModel.cs" />
+    <Compile Include="Models\Contacts\IndexViewModel.cs" />
+    <Compile Include="Models\CubeSeats\EditCubeSeatViewModel.cs" />
+    <Compile Include="Models\CubeSeats\ListOfCubeSeats.cs" />
+    <Compile Include="Models\DB\EFWrapper.cs" />
+    <Compile Include="Models\EF\Armchair.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\ArmchairsAdditionalPhoto.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\ArmchairsInOrder.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\Chair.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\ChairsAdditionalPhoto.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\ChairsInOrder.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\CubeSeat.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\CubeSeatAdditionalPhoto.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\CubeSeatInOrder.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\EF.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EF.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\EF.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\EF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EF.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\Order.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\Promotion.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\Reference.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\Sofa.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\SofaAdditionalPhoto.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\SofasInOrder.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EF\UserTable.cs">
+      <DependentUpon>EF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Enum\Enum.cs" />
+    <Compile Include="Models\Home\IndexViewModel.cs" />
+    <Compile Include="Models\OrderFullDetail.cs" />
+    <Compile Include="Models\References\ReferencesViewModel.cs" />
+    <Compile Include="Models\Search\SearchViewModel.cs" />
+    <Compile Include="Models\Session\Session.cs" />
+    <Compile Include="Models\Sofas\EditSofaViewModel.cs" />
+    <Compile Include="Models\Sofas\ListOfSofas.cs" />
+    <Compile Include="Models\TearmsAndConditions\CompanyInfo.cs" />
+    <Compile Include="Models\TearmsAndConditions\Delivery.cs" />
+    <Compile Include="Models\TearmsAndConditions\OrderProcess.cs" />
+    <Compile Include="Models\TearmsAndConditions\PaymentProcess.cs" />
+    <Compile Include="Models\TearmsAndConditions\PersonalDetails.cs" />
+    <Compile Include="Models\TearmsAndConditions\StockReturn.cs" />
+    <Compile Include="Models\TearmsAndConditions\TearmsAndConditions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Content\main.css" />
+    <Content Include="Areas\Administration\Content\normalize.css" />
+    <Content Include="Areas\Administration\Content\Style.css" />
+    <Content Include="Areas\Administration\Script\Armchairs\EditArmchair.js" />
+    <Content Include="Areas\Administration\Script\Armchairs\NewArmchair.js" />
+    <Content Include="Areas\Administration\Script\Chairs\ChairEdit.js" />
+    <Content Include="Areas\Administration\Script\Chairs\ChairNew.js" />
+    <Content Include="Areas\Administration\Script\CubeSeat\EditCubeSeat.js" />
+    <Content Include="Areas\Administration\Script\CubeSeat\NewCubeSeat.js" />
+    <Content Include="Areas\Administration\Script\LogIn\Index.js" />
+    <Content Include="Areas\Administration\Script\Promotions\PromotionEdit.js" />
+    <Content Include="Areas\Administration\Script\Promotions\PromotionNew.js" />
+    <Content Include="Areas\Administration\Script\References\NewReference.js" />
+    <Content Include="Areas\Administration\Script\Sofas\EditSofa.js" />
+    <Content Include="Areas\Administration\Script\Sofas\NewSofa.js" />
+    <Content Include="Content\camera-slider.css" />
+    <Content Include="Content\forms.css" />
+    <Content Include="Content\ie.css" />
+    <Content Include="Content\reset.css" />
+    <Content Include="Content\skeleton.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\superfish.css" />
+    <Content Include="Content\touchTouch.css" />
+    <Content Include="Content\ui.totop.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="images\About\1.jpg" />
+    <Content Include="images\About\2.jpg" />
+    <Content Include="images\About\3.jpg" />
+    <Content Include="images\About\CNC-router.jpg" />
+    <Content Include="images\About\Cologne.jpg" />
+    <Content Include="images\About\Mashine.jpg" />
+    <Content Include="images\arrows.png" />
+    <Content Include="images\bg1.gif" />
+    <Content Include="images\camera-loader.gif" />
+    <Content Include="images\Custom\OnlineShopBasket.png" />
+    <Content Include="images\divider1.gif" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\head-line.gif" />
+    <Content Include="images\header-bg.gif" />
+    <Content Include="images\HomePage\SesselRING.jpg" />
+    <Content Include="images\HomePage\Sitzwuerfel.jpg" />
+    <Content Include="images\HomePage\Sofasss.jpeg" />
+    <Content Include="images\HomePage\Stollll.jpg" />
+    <Content Include="images\image-blank.png" />
+    <Content Include="images\indicator.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo1.png" />
+    <Content Include="images\logosait.png" />
+    <Content Include="images\magnifier.png" />
+    <Content Include="images\main-bg.gif" />
+    <Content Include="images\marker1.png" />
+    <Content Include="images\marker2.png" />
+    <Content Include="images\marker3.png" />
+    <Content Include="images\marker4.png" />
+    <Content Include="images\marker5.png" />
+    <Content Include="images\menu-hov - Копие.gif" />
+    <Content Include="images\menu-hov.gif" />
+    <Content Include="images\menu-line.gif" />
+    <Content Include="images\page1-img1.jpg" />
+    <Content Include="images\page1-img2.jpg" />
+    <Content Include="images\page1-img3.jpg" />
+    <Content Include="images\page1-img4.jpg" />
+    <Content Include="images\page1-img5.jpg" />
+    <Content Include="images\page1-img6.jpg" />
+    <Content Include="images\page1-img7.jpg" />
+    <Content Include="images\page2-img1.jpg" />
+    <Content Include="images\page2-img2.jpg" />
+    <Content Include="images\page2-img3.jpg" />
+    <Content Include="images\page2-img4.jpg" />
+    <Content Include="images\page2-img5.jpg" />
+    <Content Include="images\page2-img6.jpg" />
+    <Content Include="images\page3-img1.jpg" />
+    <Content Include="images\page3-img2.jpg" />
+    <Content Include="images\page3-img3.jpg" />
+    <Content Include="images\page4-img1.jpg" />
+    <Content Include="images\page4-img2.jpg" />
+    <Content Include="images\page4-img3.jpg" />
+    <Content Include="images\page4-img4.jpg" />
+    <Content Include="images\page4-img5.jpg" />
+    <Content Include="images\page4-img6.jpg" />
+    <Content Include="images\preloader.gif" />
+    <Content Include="images\search-button-hov.gif" />
+    <Content Include="images\search-button.gif" />
+    <Content Include="images\slide-1.jpg" />
+    <Content Include="images\slide-2.jpg" />
+    <Content Include="images\slide-3.jpg" />
+    <Content Include="images\SocialNetworks\googlePlus.jpg" />
+    <Content Include="images\SocialNetworks\linkedIn.png" />
+    <Content Include="images\SocialNetworks\twitterIcon.png" />
+    <Content Include="images\SocialNetworks\youtube.png" />
+    <Content Include="images\ui.totop.png" />
+    <Content Include="Scripts\camera.js" />
+    <Content Include="Scripts\html5.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.equalheights.js" />
+    <Content Include="Scripts\jquery.mobile.customized.min.js" />
+    <Content Include="Scripts\jquery.mobilemenu.js" />
+    <Content Include="Scripts\jquery.ui.totop.js" />
+    <Content Include="Scripts\Project\Armchairs\ArmchairEdit.js" />
+    <Content Include="Scripts\Project\Armchairs\ArmchairList.js" />
+    <Content Include="Scripts\Project\Basket\Index.js" />
+    <Content Include="Scripts\Project\Chairs\ChairEdit.js" />
+    <Content Include="Scripts\Project\Chairs\ChairsList.js" />
+    <Content Include="Scripts\Project\Contact\contact.js" />
+    <Content Include="Scripts\Project\CubeSeats\CubeSeatEdit.js" />
+    <Content Include="Scripts\Project\CubeSeats\CubeSeats.js" />
+    <Content Include="Scripts\Project\Enums\Enums.js" />
+    <Content Include="Scripts\Project\Pager.js" />
+    <Content Include="Scripts\Project\References\ReferencesList.js" />
+    <Content Include="Scripts\Project\RequestConfig.js" />
+    <Content Include="Scripts\Project\RequestWorkers.js" />
+    <Content Include="Scripts\Project\Search\Search.js" />
+    <Content Include="Scripts\Project\Search\SearchOnPage.js" />
+    <Content Include="Scripts\Project\Sofas\SofaEdit.js" />
+    <Content Include="Scripts\Project\Sofas\SofasList.js" />
+    <Content Include="Scripts\Project\Utilities.js" />
+    <Content Include="Scripts\Project\Validate.js" />
+    <Content Include="Scripts\script.js" />
+    <Content Include="Scripts\superfish.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="images\ArmchairAdditionalImages\" />
+    <Folder Include="images\Armchairs\" />
+    <Folder Include="images\ChairsAdditionalImages\" />
+    <Folder Include="images\Chairs\" />
+    <Folder Include="images\CubeSeatAdditionalImages\" />
+    <Folder Include="images\CubeSeat\" />
+    <Folder Include="images\Promotions\" />
+    <Folder Include="images\References\" />
+    <Folder Include="images\SofaAdditionalImages\" />
+    <Folder Include="images\Sofas\" />
+    <Folder Include="Models\Attr\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\LogIn\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\EF\EF.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EF.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\EF\EF.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EF.edmx</DependentUpon>
+      <LastGenOutput>EF.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EF\EF.edmx.diagram">
+      <DependentUpon>EF.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\EF\EF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EF.edmx</DependentUpon>
+      <LastGenOutput>EF.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\AdminHome\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery.hoverIntent.minified.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contacts\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Promotions\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Promotions\New.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Promotions\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Chairs\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Chairs\New.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\CubeSeat\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Sofas\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Armchairs\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Chairs\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Armchairs\New.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Armchairs\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Sofas\New.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Sofas\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\CubeSeat\New.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\CubeSeat\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ChairsApp\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ArmchairsApp\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CubeSeatsApp\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SofasApp\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\About\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Search\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ArmchairsApp\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\touchTouch.jquery.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ChairsApp\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SofasApp\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CubeSeatsApp\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Basket\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TermsAndConditions\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TermsAndConditions\StockReturn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TermsAndConditions\OrderProcess.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TermsAndConditions\Delivery.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TermsAndConditions\PaymentProcess.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TermsAndConditions\PersonalDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Armchairs\AddAditionalImage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery.cycle2.carousel.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\_Carousel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Chairs\AddAditionalImagePage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Sofas\AddAditionalImagePage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\CubeSeat\AddAditionalImagePage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TermsAndConditions\CompanyInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Basket\ConfirmationPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Order\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Order\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\Order\AllInActiveOrders.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\References\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Administration\Views\References\New.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ReferencesApp\Index.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57050</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57050/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

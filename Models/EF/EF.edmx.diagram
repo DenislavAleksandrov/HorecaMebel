@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="703700b042524f08bdd7a5a7daed6798" Name="Diagram1">
+        <EntityTypeShape EntityType="HorecaMebelModel.UserTable" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HorecaMebelModel.Promotion" Width="1.5" PointX="2.75" PointY="0.625" />
+        <EntityTypeShape EntityType="HorecaMebelModel.Chair" Width="1.5" PointX="4.375" PointY="0.5" />
+        <EntityTypeShape EntityType="HorecaMebelModel.Armchair" Width="1.5" PointX="6.25" PointY="0.5" />
+        <EntityTypeShape EntityType="HorecaMebelModel.CubeSeat" Width="1.5" PointX="8" PointY="0.5" />
+        <EntityTypeShape EntityType="HorecaMebelModel.Sofa" Width="1.5" PointX="9.75" PointY="0.5" />
+        <EntityTypeShape EntityType="HorecaMebelModel.ArmchairsAdditionalPhoto" Width="1.5" PointX="0.5" PointY="5" />
+        <EntityTypeShape EntityType="HorecaMebelModel.ChairsAdditionalPhoto" Width="1.5" PointX="0.5" PointY="3.125" />
+        <EntityTypeShape EntityType="HorecaMebelModel.SofaAdditionalPhoto" Width="1.5" PointX="2.25" PointY="5" />
+        <EntityTypeShape EntityType="HorecaMebelModel.CubeSeatAdditionalPhoto" Width="1.5" PointX="2.25" PointY="3.125" />
+        <EntityTypeShape EntityType="HorecaMebelModel.ArmchairsInOrder" Width="1.5" PointX="4.5" PointY="4.875" />
+        <EntityTypeShape EntityType="HorecaMebelModel.ChairsInOrder" Width="1.5" PointX="6.5" PointY="4.875" />
+        <EntityTypeShape EntityType="HorecaMebelModel.CubeSeatInOrder" Width="1.5" PointX="10.375" PointY="4.875" />
+        <EntityTypeShape EntityType="HorecaMebelModel.Order" Width="1.5" PointX="12.25" PointY="4" />
+        <EntityTypeShape EntityType="HorecaMebelModel.SofasInOrder" Width="1.5" PointX="8.5" PointY="4.875" />
+        <EntityTypeShape EntityType="HorecaMebelModel.Reference" Width="1.5" PointX="0.75" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

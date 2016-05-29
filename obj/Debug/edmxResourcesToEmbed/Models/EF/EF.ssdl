@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HorecaMebelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Armchairs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="NewPrice" Type="float" />
+    <Property Name="Width" Type="float" Nullable="false" />
+    <Property Name="Height" Type="float" Nullable="false" />
+    <Property Name="Depth" Type="float" Nullable="false" />
+    <Property Name="WoodenFrame" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Seat" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Back" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Skin" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Legs" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Descrption" Type="nvarchar" MaxLength="250" />
+    <Property Name="ProductionTime" Type="nvarchar" MaxLength="300" />
+    <Property Name="SkinColour" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="ArmchairsAdditionalPhoto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArmchairId" Type="int" Nullable="false" />
+    <Property Name="Imagepath" Type="nvarchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArmchairsInOrder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderId" Type="int" Nullable="false" />
+    <Property Name="armcharId" Type="int" Nullable="false" />
+    <Property Name="skin" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Chairs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="NewPrice" Type="float" />
+    <Property Name="WoodenFrame" Type="nvarchar" MaxLength="500" />
+    <Property Name="Seat" Type="nvarchar" MaxLength="500" />
+    <Property Name="Back" Type="nvarchar" MaxLength="500" />
+    <Property Name="WoodColor" Type="nvarchar" MaxLength="500" />
+    <Property Name="Width" Type="float" />
+    <Property Name="Height" Type="float" />
+    <Property Name="Depth" Type="float" />
+    <Property Name="Skin" Type="nvarchar" MaxLength="500" />
+    <Property Name="ProductionTime" Type="nvarchar" MaxLength="300" />
+    <Property Name="SkinColour" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="ChairsAdditionalPhoto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChairId" Type="int" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChairsInOrder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderId" Type="int" Nullable="false" />
+    <Property Name="chairId" Type="int" Nullable="false" />
+    <Property Name="skin" Type="nvarchar" MaxLength="550" />
+    <Property Name="woodColour" Type="nvarchar" MaxLength="550" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CubeSeat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="550" Nullable="false" />
+    <Property Name="WoodenFrame" Type="nvarchar" MaxLength="550" Nullable="false" />
+    <Property Name="Seat" Type="nvarchar" MaxLength="550" Nullable="false" />
+    <Property Name="Skin" Type="nvarchar" MaxLength="550" Nullable="false" />
+    <Property Name="Legs" Type="nvarchar" MaxLength="550" Nullable="false" />
+    <Property Name="Width" Type="float" Nullable="false" />
+    <Property Name="Height" Type="float" Nullable="false" />
+    <Property Name="Depth" Type="float" Nullable="false" />
+    <Property Name="Price" Type="float" />
+    <Property Name="NewPrice" Type="float" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="550" />
+    <Property Name="Description" Type="nvarchar" MaxLength="550" />
+    <Property Name="ProductionTime" Type="nvarchar" MaxLength="300" />
+    <Property Name="SkinColour" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="CubeSeatAdditionalPhoto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CubeSeatId" Type="int" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CubeSeatInOrder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderId" Type="int" Nullable="false" />
+    <Property Name="cubeSeatId" Type="int" Nullable="false" />
+    <Property Name="skin" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="order_Guid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="PostCode" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Company" Type="nvarchar" MaxLength="300" />
+    <Property Name="VAT" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="FurniturePrice" Type="float" />
+    <Property Name="TransportPrice" Type="float" />
+    <Property Name="DDSPrice" Type="float" />
+    <Property Name="FullPrice" Type="float" />
+    <Property Name="OrderDateTime" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="Promotions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Text2" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductURL" Type="nvarchar" MaxLength="550" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductImage" Type="nvarchar" MaxLength="550" />
+  </EntityType>
+  <EntityType Name="References">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sofa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Width" Type="float" Nullable="false" />
+    <Property Name="Height" Type="float" Nullable="false" />
+    <Property Name="Depth" Type="float" Nullable="false" />
+    <Property Name="WoodenFrame" Type="nvarchar" MaxLength="550" Nullable="false" />
+    <Property Name="Seat" Type="nvarchar" MaxLength="550" Nullable="false" />
+    <Property Name="Back" Type="nvarchar" MaxLength="550" Nullable="false" />
+    <Property Name="Skin" Type="nvarchar" MaxLength="550" Nullable="false" />
+    <Property Name="Legs" Type="nvarchar" MaxLength="550" Nullable="false" />
+    <Property Name="Price" Type="float" />
+    <Property Name="NewPrice" Type="float" />
+    <Property Name="Description" Type="nvarchar" MaxLength="550" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="550" />
+    <Property Name="ProductionTime" Type="nvarchar" MaxLength="300" />
+    <Property Name="SkinColour" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="SofaAdditionalPhoto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SofaId" Type="int" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SofasInOrder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderId" Type="int" Nullable="false" />
+    <Property Name="sofaId" Type="int" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+    <Property Name="skin" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserTable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="HorecaMebelModelStoreContainer">
+    <EntitySet Name="Armchairs" EntityType="Self.Armchairs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ArmchairsAdditionalPhoto" EntityType="Self.ArmchairsAdditionalPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ArmchairsInOrder" EntityType="Self.ArmchairsInOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chairs" EntityType="Self.Chairs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChairsAdditionalPhoto" EntityType="Self.ChairsAdditionalPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChairsInOrder" EntityType="Self.ChairsInOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CubeSeat" EntityType="Self.CubeSeat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CubeSeatAdditionalPhoto" EntityType="Self.CubeSeatAdditionalPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CubeSeatInOrder" EntityType="Self.CubeSeatInOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Promotions" EntityType="Self.Promotions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="References" EntityType="Self.References" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sofa" EntityType="Self.Sofa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SofaAdditionalPhoto" EntityType="Self.SofaAdditionalPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SofasInOrder" EntityType="Self.SofasInOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserTable" EntityType="Self.UserTable" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

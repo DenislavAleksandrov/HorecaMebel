@@ -1,0 +1,35 @@
+﻿<div class="login">
+    <h1>Sign in</h1>
+
+    <div class="row">
+        <label for="username" class="block-label">Email:</label>
+        <input type="text" id="username" name="username">
+        <span class="error" id="userNameError"></span>
+    </div>
+
+    <div class="row">
+        <label for="password" class="block-label">Password:</label>
+        <input type="password" id="password" name="password" />
+        <span class="error" id="passwordError"></span>
+    </div>
+
+    <span class="error" id="notValidUser"></span>
+
+    <div>
+        <input id="LogInButton" type="submit" value="Sign In" class="login-btn">
+    </div>
+</div>
+
+<script src="~/Areas/Administration/Script/LogIn/Index.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        LogIn.Init();
+
+        document.onkeydown = function (event) {
+            if (event.keyCode == 13) {
+                LogIn.LogIn();
+            }
+        }
+    });
+</script>

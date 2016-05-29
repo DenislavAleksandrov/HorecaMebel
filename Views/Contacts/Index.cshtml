@@ -1,0 +1,50 @@
+﻿@using HorecaMebel.Resources
+<section id="content">
+        <div class="container_24">
+            <div class="wrapper">
+                <article class="grid_24">
+                    <div class="inner-block">
+                        <h2>@Resources.ContactForm</h2>
+                        <div id="form1">
+                            <div class="success">
+                                <div class="success_txt" data-selector="success">
+
+                                </div>
+                            </div>
+                                <label class="name">
+                                    <input type="text" value="@Resources.Name *" data-selector="Name" />
+                                </label>
+                                <span class="error" data-selector="NameError">rrrr</span>
+                                <label class="email">
+                                    <input type="text" value="@Resources.EMail * " data-selector="Email" />
+                                    <span class="error" data-selector="EmailError"></span>
+                                </label>
+                                <label class="phone">
+                                    <input type="tel" value="@Resources.Phone *" data-selector="Phone" />
+                                    <span class="error" data-selector="PhoneError"></span>
+                                </label>
+                                <label class="message">
+                                    <textarea data-selector="Message">@Resources.Message *</textarea>
+                                    <span class="error" data-selector="MessageError"></span>
+                                </label>
+                                <div class="clear"></div>
+
+                                
+
+                                <div class="link-form">                                    
+                                    <div class="search-button p27" style="cursor:pointer" data-selector="BtnClear">@Resources.Clear</div>
+                                    <div class="search-button p28" style="cursor:pointer" data-selector="BtnSend">@Resources.Send</div>
+                                </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+</section>
+<script src="~/Scripts/Project/Contact/contact.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        Contact.Init();
+    });
+</script>

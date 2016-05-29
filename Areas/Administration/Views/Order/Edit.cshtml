@@ -1,0 +1,374 @@
+﻿@using HorecaMebel.Resources
+@model HorecaMebel.Areas.Administration.Models.ViewModels.Orders.OrderViewModel
+@using HorecaMebel.Models.Basket
+
+<style>
+
+    td {
+    padding:10px !important;
+    text-align:center;
+    border: 1px solid #6c6c6c !important;
+    background: #fff; 
+}
+
+    .element-in-basket-img {
+    width:150px !important;
+    height:150px !important;
+}
+
+tr {
+    margin-bottom:5px;
+    border: 1px solid #6c6c6c;
+}
+
+table {
+    width:100%;
+    margin-bottom:15px;    
+    color:#6c6c6c;
+    font-size:16px;
+    margin-top:15px;
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+th {
+    background: #7f7f7f;
+    color: #fff;
+    font-weight: 500;
+    text-align: left;
+    padding: 7px 15px;
+    padding-bottom:15px;
+    padding-top:15px;
+    border: 1px solid #6c6c6c;
+}
+
+.table-col-1 {
+    width : 150px;
+    padding:10px;
+}
+
+</style>
+
+<div class="main-content">
+    <div class="wrapper">
+        <div>
+            <div style="float:left">
+
+                <label for="contactPersonPosition">Id</label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.OrderId" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+                <label for="contactPersonPosition">Title</label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.Title" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+                <label for="contactPersonPosition">First Name</label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.FirstName" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+                <label for="contactPersonPosition">Last Name</label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.LastName"/>
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+                <label for="contactPersonPosition">Email</label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.Email" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+                <label for="contactPersonPosition">Phone</label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.Phone" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+                <label for="contactPersonPosition">Order Date</label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.OrderDate" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+            </div>
+
+            <div style="float:left">
+
+                <label for="contactPersonPosition">Country </label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.Country" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+                <label for="contactPersonPosition">City </label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.City" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+
+                <label for="contactPersonPosition">Address </label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.Address" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+                <label for="contactPersonPosition">PostCode </label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.PostCode" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+                <label for="contactPersonPosition">Company </label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.Company" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+                <label for="contactPersonPosition">VAT </label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.Vat" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+                @if(!string.IsNullOrEmpty(Model.Order.FreeText))
+                { 
+                    <label for="contactPersonPosition">Comment </label>
+                    <div class="row">
+                        <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.FreeText" />
+                        <span class="error" data-selector="NameError"></span>
+                    </div>
+                }
+                
+                <label for="contactPersonPosition">Furniture Price </label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.FurniturePrice" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+
+                <label for="contactPersonPosition">Transport Price </label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.TransportPrice" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+                <label for="contactPersonPosition">DDS Price </label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.DDSPrice" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+                <label for="contactPersonPosition">Full Price </label>
+                <div class="row">
+                    <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Order.FullPrice" />
+                    <span class="error" data-selector="NameError"></span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+            <article class="grid_12 alpha">
+                <table style="width:100%">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>@Resources.Name</th>
+                            <th>@Resources.SinglePrice</th>
+                            <th>@Resources.Count</th>
+                            <th>@Resources.Sum</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (ArmchairInBasket armchairs in Model.Order.ArmchairsInBasket)
+                        {
+                            <tr data-rowtoremove="@armchairs.Id">
+                                <td class="table-col-1">
+                                    <img src="@armchairs.Armchair.ImagePath" class="element-in-basket-img" />
+                                </td>
+                                <td>
+
+                                    <ul>
+                                        <li style="margin-bottom:10px">@armchairs.Armchair.Name</li>
+
+                                        <li style="margin-bottom:10px">@Resources.SkinOptions: @armchairs.Skin</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    @{
+                            double priceArm = armchairs.Armchair.NewPrice.HasValue ? armchairs.Armchair.NewPrice.Value : armchairs.Armchair.Price;
+                                    }
+
+                                    @priceArm €
+                                </td>
+
+                                <td>
+                                    <select class="w100" data-selector="countElement" data-id="@armchairs.Id" disabled="disabled">
+                                        @for (int i = 0; i <= 100; i++)
+                                        {
+                                            if (i == armchairs.Count)
+                                            {
+                                                <option value="@i" selected="selected">@i</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@i">@i</option>
+                                            }
+                                        }
+                                    </select>
+                                </td>
+
+                                <td>
+                                    <span data-selector="elementsum" data-id="@armchairs.Id">@armchairs.SinglePrice</span>  €
+                                </td>
+                            </tr>
+                        }
+
+                        @foreach (SofaInBasket sofas in Model.Order.SofasInBasket)
+                        {
+                            <tr data-rowtoremove="@sofas.Id">
+                                <td class="table-col-1">
+                                    <img src="@sofas.Sofa.ImagePath" class="element-in-basket-img" />
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li style="margin-bottom:10px">@sofas.Sofa.Name</li>
+                                        <li style="margin-bottom:10px">@Resources.SkinOptions: @sofas.Skin</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    @{
+                            double priceSofa = sofas.Sofa.NewPrice.HasValue ? sofas.Sofa.NewPrice.Value : sofas.Sofa.Price.Value;
+                                    }
+
+                                    @priceSofa €
+                                </td>
+                                <td>
+                                    <select class="w100" data-selector="countElement" data-id="@sofas.Id" disabled="disabled">
+                                        @for (int i = 0; i <= 100; i++)
+                                        {
+                                            if (i == sofas.Count)
+                                            {
+                                                <option value="@i" selected="selected">@i</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@i">@i</option>
+                                            }
+                                        }
+                                    </select>
+                                </td>
+
+                                <td>
+                                    <span data-selector="elementsum" data-id="@sofas.Id"> @sofas.SinglePrice</span> €
+                                </td>
+
+
+                            </tr>
+                        }
+
+                        @foreach (ChairInBasket chair in Model.Order.ChairsInBasket)
+                        {
+                            <tr data-rowtoremove="@chair.Id">
+                                <td class="table-col-1">
+                                    <img src="@chair.Chair.ImagePath" class="element-in-basket-img" />
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li style="margin-bottom:10px">@chair.Chair.Name</li>
+
+                                        @if (!String.IsNullOrEmpty(chair.Colour))
+                                        {
+                                            <li style="margin-bottom:5px">@Resources.SkinOptions: @chair.Colour</li>
+                                        }
+
+                                        <li>@Resources.WoodColor: @chair.WoodColour</li>
+                                    </ul>
+
+                                </td>
+                                <td>
+                                    @{
+                            double price = chair.Chair.NewPrice.HasValue ? chair.Chair.NewPrice.Value : chair.Chair.Price;
+                                    }
+
+                                    @price €
+                                </td>
+                                <td>
+                                    <select class="w100" data-selector="countElement" data-id="@chair.Id" disabled="disabled">
+                                        @for (int i = 0; i <= 100; i++)
+                                        {
+                                            if (i == chair.Count)
+                                            {
+                                                <option value="@i" selected="selected">@i</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@i">@i</option>
+                                            }
+                                        }
+                                    </select>
+                                </td>
+
+                                <td>
+                                    <span data-selector="elementsum" data-id="@chair.Id"> @chair.SinglePrice</span> €
+                                </td>
+                            </tr>
+                        }
+
+                        @foreach (CubeSeatInBasket cubeSeat in Model.Order.CubeSeatInBasket)
+                        {
+                            <tr data-rowtoremove="@cubeSeat.Id">
+                                <td class="table-col-1">
+                                    <img src="@cubeSeat.CubeSeat.ImagePath" class="element-in-basket-img" />
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li style="margin-bottom:10px">@cubeSeat.CubeSeat.Name</li>
+
+                                        <li style="margin-bottom:10px">@Resources.SkinOptions: @cubeSeat.Skin</li>
+                                    </ul>
+
+                                </td>
+                                <td>
+                                    @{
+                            double price = cubeSeat.CubeSeat.NewPrice.HasValue ? cubeSeat.CubeSeat.NewPrice.Value : cubeSeat.CubeSeat.Price.Value;
+                                    }
+                                    @price €
+                                </td>
+                                <td>
+                                    <select class="w100" data-selector="countElement" data-id="@cubeSeat.Id" disabled="disabled">
+                                        @for (int i = 0; i <= 100; i++)
+                                        {
+                                            if (i == cubeSeat.Count)
+                                            {
+                                                <option value="@i" selected="selected">@i</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@i">@i</option>
+                                            }
+                                        }
+                                    </select>
+                                </td>
+
+                                <td>
+                                    <span data-selector="elementsum" data-id="@cubeSeat.Id"> @cubeSeat.SinglePrice</span> €
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </article>
+</div>
+</div>
+

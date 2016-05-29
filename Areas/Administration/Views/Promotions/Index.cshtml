@@ -1,0 +1,37 @@
+﻿@model HorecaMebel.Areas.Administration.Models.PromotionsViewModel
+@{
+    ViewBag.Title = "Promotions";
+}
+
+<div class="main-content">
+    <div class="wrapper">
+        
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            @foreach (var promotion in Model.Promotions)
+            {
+                <tr>
+                    <td>@promotion.Name</td>
+                    <td>@promotion.ProductName</td>
+                    <td>@promotion.Price</td>
+                    <td><img src="@promotion.ProductImage" height="100" width="100"/></td>
+                    <td><a class="action-btn" href="/Administration/Promotions/Edit/@promotion.id">Edit</a></td>
+                    <td><a class="action-btn" href="/Administration/Promotions/Delete/@promotion.id">Delete</a></td>
+                </tr>
+            }
+        </table>
+
+        <div class="clearfix">
+            <a class="action-btn" href="/Administration/Promotions/New">CREATE NEW PROMOTION</a>
+        </div>
+    </div>
+
+   
+</div>

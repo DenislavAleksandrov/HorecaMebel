@@ -1,0 +1,11 @@
+*+html{overflow:auto;}
+
+.page1-box1, .camera_wrap
+{behavior:url(js/PIE.htc);position:relative}
+
+
+ .magnifier span{
+ 	display: none;
+ 	background: url(../images/magnifying-glass.png) center center no-repeat;
+ }
+ .magnifier:hover span{display: block;}

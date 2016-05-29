@@ -1,0 +1,35 @@
+﻿@using HorecaMebel.Areas.Administration.Models.ViewModels
+@model ReferencesViewModel
+
+<div class="main-content">
+    <div class="wrapper">
+
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Delete</th>
+            </tr>
+
+            @foreach (var reference in Model.References)
+            {
+                <tr>
+                    <td>
+                        @reference.id
+                    </td>
+                    <td>
+                        <img src="@reference.ImagePath"style="width:150px;height:150px" />
+                    </td>
+                    <td>
+                        <a href="/Administration/References/Delete/@reference.id">DELETE</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <div class="clearfix">
+            <a class="action-btn" href="/Administration/References/New">CREATE NEW REFERENCE</a>
+        </div>
+
+    </div>
+</div>

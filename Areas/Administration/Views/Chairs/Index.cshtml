@@ -1,0 +1,46 @@
+﻿@model HorecaMebel.Areas.Administration.Models.ViewModels.Chair.ChairsViewModel
+
+@{
+    ViewBag.Title = "Chairs";
+}
+
+<div class="main-content">
+    <div class="wrapper">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Reduce Price</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            @foreach (var chair in Model.Chairs)
+            {
+                <tr>
+                    <td>@chair.Name</td>
+                    <td>€ @chair.Price</td>
+                    @if(chair.NewPrice.HasValue)
+                    { 
+                        <td>€ @chair.NewPrice</td>
+                    }
+                    else
+                    {
+                        <td>-</td>
+                    }
+                    
+                    <td><img src="@chair.ImagePath" height="100" width="100" /></td>
+                    <td>@chair.Description</td>
+                    <td><a class="action-btn" href="/Administration/Chairs/Edit/@chair.id">Edit</a></td>
+                    <td><a class="action-btn" href="/Administration/Chairs/Delete/@chair.id">Delete</a></td>
+                </tr>
+            }
+        </table>
+
+        <div class="clearfix">
+            <a class="action-btn" href="/Administration/Chairs/New">CREATE NEW CHAIR</a>
+        </div>
+
+    </div>
+</div>

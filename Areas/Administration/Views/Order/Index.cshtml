@@ -1,0 +1,46 @@
+﻿@using HorecaMebel.Areas.Administration.Models.ViewModels
+
+@model OrdersTableViewModel
+
+<div class="main-content">
+    <div class="wrapper" style="width:100%">
+        <table style="width:100%">
+            <tr>
+                <th>Guid</th>
+                <th>Date</th>
+                <th>Customer Name</th>
+                <th>Country, City, Address, PostCode</th>
+                <th>Company</th>
+                <th>VAT</th>
+                <th>Email, Phone</th>
+
+                <th>Price</th>
+
+                <th>Edit</th>
+                <th>Active/DeActive</th>
+            </tr>
+
+            @foreach (var order in Model.Orders)
+            {
+                <tr>
+                    <td>@order.order_Guid</td>
+                    <td>@order.OrderDateTime</td>
+                    <td>@order.Title @order.FirstName @order.LastName</td>
+                    <td>@order.Country, @order.City, @order.Address, @order.PostCode</td>
+
+                    <td>@order.Company</td>
+                    <td>@order.VAT</td>
+                    <td>@order.Email, @order.Phone</td>
+
+                    <td>
+                        Full Price @order.FullPrice €
+                    </td>
+
+                    <td><a href="/Administration/Order/Edit/@order.id">View</a></td>
+                    <td><a href="/Administration/Order/Deactivate/@order.id">Deactivate</a></td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>

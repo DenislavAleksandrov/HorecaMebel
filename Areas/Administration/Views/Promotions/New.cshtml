@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "New";
+}
+
+<div class="main-content">
+    <div class="wrapper">
+
+        <label>Image*</label>
+        <div class="row">
+            <div class="images-placeholder new">
+                <div class="main" data-selector="ImageContainer"></div>
+            </div>
+            <div>
+                <div class="upload-file form-upload">
+                    <input type="file" name="file" data-selector="fileUploadValue" />
+
+                    <span class="error" data-selector="imageFiledError">&nbsp;</span>
+                </div>
+
+                <input type="button" value="Upload" data-selector="BtnUploadImage" class="action-btn upload" />
+
+            </div>
+
+        </div>
+
+        <label for="contactPersonPosition">Name*</label>
+        <div class="row">
+            <input type="text" id="contactPersonPosition" data-selector="PromotionName" />
+            <span class="error" data-selector="PromotionNameError"></span>
+        </div>
+
+        <label for="contactPersonPosition">Product Name*</label>
+        <div class="row">
+            <input type="text" id="contactPersonPosition" data-selector="Text1" />
+            <span class="error" data-selector="Text1Error"></span>
+        </div>
+
+        <label for="contactPersonEmail">TEXT 2*</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Text2" value="TOP ANGEBOT" />
+            <span class="error" data-selector="Text2Error"></span>
+        </div>
+
+        <label for="contactPersonEmail">Price *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Text3"/>
+            <span class="error" data-selector="Text3Error"></span>
+        </div>    
+        
+        <label for="contactPersonEmail">Product URL *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="ProductUrl" />
+            <span class="error" data-selector="ProductUrlError"></span>
+        </div>    
+
+        <div class="clearfix">
+            <a class="action-btn" data-selector="Save">SAVE</a>
+        </div>
+    </div>
+</div>
+<script src="~/Areas/Administration/Script/Promotions/PromotionNew.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        NewPromotion.Init();
+
+        document.onkeydown = function (event) {
+            if (event.keyCode == 13) {
+                NewPromotion.Save();
+            }
+        }
+    });
+</script>

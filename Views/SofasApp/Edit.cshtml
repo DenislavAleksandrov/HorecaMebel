@@ -1,0 +1,171 @@
+﻿@model HorecaMebel.Models.Sofas.EditSofaViewModel
+
+@using HorecaMebel.Resources
+
+@{
+    IEnumerable<string> frameOptions = Model.Sofa.WoodenFrame.Split(',');
+
+    IEnumerable<string> seatOptions = Model.Sofa.Seat.Split(',');
+
+    IEnumerable<string> backOptions = Model.Sofa.Back.Split(',');
+
+    IEnumerable<string> legsOption = Model.Sofa.Legs.Split(',');
+
+    IEnumerable<string> skinOptions = Model.Sofa.Skin.Split(',');
+
+    IEnumerable<string> skinColourOptions = Model.Sofa.SkinColour.Split(',');
+}
+
+<link href="~/Content/touchTouch.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.ui.totop.js"></script>
+<script src="~/Scripts/touchTouch.jquery.js"></script>
+
+<section id="content">
+    <div class="container_24">
+        <div class="wrapper">
+            <article class="grid_24">
+                <div class="p11">
+
+                    <article class="grid_12 alpha">
+                        <div class="inner-block">
+                            <figure class="page2-img1">
+                                <a class="page4-img1 magnifier" href="@Model.Sofa.ImagePath">
+                                    <img class="page4-img1" src="@Model.Sofa.ImagePath" alt="">
+                                    <span></span>
+                                </a>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article class="grid_12 omega">
+                        <div>
+                            <article class="grid_12 alpha">
+                                <div>
+                                    <div class="floatleft"><h1 style="margin-top:0px !important">@Model.Sofa.Name.ToUpper()</h1></div>
+
+                                    @if (!Model.Sofa.NewPrice.HasValue)
+                                    {
+                                        <div class="floatright">
+                                            <h1 style="margin-top:0px !important">@Model.Sofa.Price € *</h1>
+                                            <small>@Resources.PriceDescriptionText</small><br />
+                                            <small style="margin-top:0px !important">@Model.Sofa.ProductionTime</small>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="floatright">
+                                            <h1 style="margin-top:0px !important; text-decoration:line-through">@Model.Sofa.Price € *</h1>
+
+                                            <h1 style="color:red; margin-top:0px !important">@Resources.NewPrice: @Model.Sofa.NewPrice € *</h1>
+
+                                            <small>@Resources.PriceDescriptionText</small><br />
+                                            <small style="margin-top:0px !important">@Model.Sofa.ProductionTime</small>
+                                        </div>
+                                    }
+                                </div>
+
+                                <div class="clearfix"></div>
+
+                                <h6 style="padding-bottom:5px !important;margin-top:25px !important">@Resources.SkinOptions * </h6>
+                                <div style="height:35px">
+                                    <select class="w100 h100" data-selector="SkinElement">
+                                        <option selected="selected" value="-1">@Resources.ComboBoxDelimiter @Resources.PleaseSelect @Resources.ComboBoxDelimiter</option>
+                                        @foreach (string element in skinColourOptions)
+                                        {
+                                            <option value="@element">@element</option>
+                                        }
+                                    </select>
+
+                                    <small data-selector="SkinError"></small>
+                                </div>
+
+                                <h6 style="padding-bottom:5px !important;margin-top:25px !important">@Resources.Count *</h6>
+                                <div style="height:35px">
+                                    <select class="w100 h100" data-selector="Count">
+                                        <option selected="selected" value="-1">@Resources.ComboBoxDelimiter @Resources.PleaseSelect @Resources.ComboBoxDelimiter</option>
+                                        @for (int i = Model.MinAmountForSofaToOrder; i <= 600; i++)
+                                        {
+                                            <option value="@i">@i</option>
+                                        }
+                                    </select>
+
+                                    <small data-selector="CountError"></small>
+                                </div>   
+
+                            </article>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div style="margin-top:20px">
+                            <div class="search-buttonCustom" style="cursor:pointer" data-selector="BtnAddInBasket">@Resources.AddInBasket</div>
+                            <div class="clearfix"></div>
+                            <span class="time1Custom" style="margin-top:10px;" data-selector="AddElementInBasket"></span>
+                        </div> 
+
+                        <div class="clearfix"></div>
+
+                        <div style="margin-top:80px">
+
+                            @if (Model.AdditionalImage != null && Model.AdditionalImage.Count > 0)
+                            {
+                                foreach (var image in Model.AdditionalImage)
+                                {
+                                    <div class="page2-img1 floatleft" style="width:123px;height:150px; margin-top:5px;margin-right:5px;">
+                                        <a class="page4-img1 magnifier" href="@image">
+                                            <img class="page4-img1" src="@image" alt="" style="width:123px;height:150px; margin-top:5px;" />
+                                            <span></span>
+                                        </a>
+                                    </div>
+                                }
+                            }
+                        </div>                     
+                    </article>
+                </div>
+            </article>
+            <article class="grid_24">
+                @if (!String.IsNullOrEmpty(Model.Sofa.Description))
+                {
+                    <div><span class="time1Custom">@Resources.Description</span><p class="marginleft20 time1Custom">@Html.Raw(Model.Sofa.Description)</p></div>
+                }
+
+                <br />
+
+                <div><span class="time1Custom">@Resources.Width: @Model.Sofa.Width cm</span></div>
+
+                <div><span class="time1Custom">@Resources.Height: @Model.Sofa.Height cm</span></div>
+
+                <div><span class="time1Custom">@Resources.Depth: @Model.Sofa.Depth cm</span></div>
+
+                <br />
+
+                <div><span class="time1Custom">@Resources.FrameOptions: @Model.Sofa.WoodenFrame</span></div>
+
+                <div><span class="time1Custom">@Resources.SeatOptions: @Model.Sofa.Seat</span></div>
+
+                <div><span class="time1Custom">@Resources.BackOptions: @Model.Sofa.Back</span></div>
+
+                <div><span class="time1Custom">@Resources.SkinOptions: @Model.Sofa.Skin</span></div>
+
+                <div><span class="time1Custom">@Resources.LegOptions: @Model.Sofa.Legs</span></div>
+
+
+            </article>
+
+
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/Project/Sofas/SofaEdit.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        jQuery(function(){
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+        $(window).load( function(){
+            jQuery('.magnifier').touchTouch();
+        });
+
+        SofaEdit.Init('@Model.Sofa.id','@Html.Raw(Resources.ProvideCorrectValue)');
+    });
+
+</script>

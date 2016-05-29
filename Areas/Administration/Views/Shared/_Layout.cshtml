@@ -1,0 +1,54 @@
+﻿@using HorecaMebel.Areas.Administration.Models
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Administration</title>    
+    <meta name="viewport" content="width=device-width" /> 
+    <link href="~/Areas/Administration/Content/main.css" rel="stylesheet" /> 
+    <link href="~/Areas/Administration/Content/normalize.css" rel="stylesheet" />
+    <link href="~/Areas/Administration/Content/Style.css" rel="stylesheet" />
+    
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script src="~/Scripts/Project/Validate.js"></script>
+    <script src="~/Scripts/Project/Utilities.js"></script>
+    <script src="~/Scripts/Project/RequestWorkers.js"></script>
+    <script src="~/Scripts/Project/RequestConfig.js"></script>
+</head>
+<body>
+    <div class="container">
+        @if (Model != null && Model.Menu != null)
+        {
+            <header>
+                <div class="main-navigation">
+                    <div class="header-wrapper">                        
+
+                        <nav>
+                            <ul>
+                                @foreach (MenuItem item in Model.Menu)
+                                {
+                                    if (item.IsActive)
+                                    {
+                                        <li><a href="@item.Url" class="active">@item.Text</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a href="@item.Url">@item.Text</a></li>
+                                    }
+                                }
+                            </ul>
+                        </nav>
+
+                        <div class="sign-out">
+                            <a href="/LogIn/LogOut">Sign out</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        }
+        <div id="body">            
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

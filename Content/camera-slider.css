@@ -1,0 +1,235 @@
+/********************** Slider ************************/
+
+.camera_wrap a, .camera_wrap img, 
+.camera_wrap ol, .camera_wrap ul, .camera_wrap li,
+.camera_wrap table, .camera_wrap tbody, .camera_wrap tfoot, .camera_wrap thead, .camera_wrap tr, .camera_wrap th, .camera_wrap td
+.camera_thumbs_wrap a, .camera_thumbs_wrap img, 
+.camera_thumbs_wrap ol, .camera_thumbs_wrap ul, .camera_thumbs_wrap li,
+.camera_thumbs_wrap table, .camera_thumbs_wrap tbody, .camera_thumbs_wrap tfoot, .camera_thumbs_wrap thead, .camera_thumbs_wrap tr, .camera_thumbs_wrap th, .camera_thumbs_wrap td {
+	background: none;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	list-style: none
+}
+
+.cameraCont, .cameraContents {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.camera_wrap {
+	display: none;
+	float: left;
+	z-index:999;
+	min-height:468px;
+	box-shadow: 0 1px 7px 2px #E5E5E5;
+	margin-top:20px;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+	position: relative;
+}
+
+.camera_wrap {
+	width: 100%;
+	border:1px solid #fff;
+}
+
+.camera_src {
+	display: none;
+}
+
+.cameraCont, .cameraContents {
+	height: 100%;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+.cameraSlide {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+.cameraContent {
+	bottom: 0;
+	display: none;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+.camera_target {
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	text-align: left;
+	top: 0;
+	width: 100%;
+	z-index: 0;
+}
+.camera_overlayer {
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 0;
+}
+.camera_target_content {
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 2;
+}
+
+.camera_loader {
+    background: #fff url(../images/camera-loader.gif) no-repeat center;
+	background: rgba(255, 255, 255, 0.9) url(../images/camera-loader.gif) no-repeat center;
+	border: 1px solid #ffffff;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	border-radius: 18px;
+	height: 36px;
+	left: 50%;
+	overflow: hidden;
+	position: absolute;
+	margin: -18px 0 0 -18px;
+	top: 50%;
+	width: 36px;
+	z-index: 3;
+}
+
+.camera_caption {
+	position:absolute;
+	left:0;
+	bottom:7% !important;
+	width:100%;
+	text-transform:uppercase;
+	height:auto;
+	font-family:impact;
+}
+
+
+.text1 {
+    color: #BCA792;
+    display: block;
+    font-size: 32px;
+    line-height: 39px;
+    padding-left: 77px;
+}
+
+.text2 {
+    color: #6ABB18;
+    display: inline-block;
+    font-size: 62px;
+    line-height: 75px;
+	padding-left:44px;
+    margin-top: -12px;
+    position: relative;
+}
+
+.text3 {
+    color: #4E4D4D;
+    display: inline-block;
+    font-size: 32px;
+    line-height: 39px;
+    padding-left: 3px;
+    padding-top: 17px;
+}
+
+.pos1 {
+	bottom:14% !important;
+}
+
+.pos2 {
+	bottom:4% !important;
+}
+
+.a1 {
+	padding-left:256px;
+}
+
+.a2 {
+    margin-top: -8px;
+    padding-left: 146px;
+}
+
+.a3 {
+    margin-top: -24px;
+    padding-left: 104px;
+}
+
+.a4 {
+	padding-left:48px;
+}
+.a5 {
+    margin: -8px 0 0;
+    padding-left: 20px;
+}
+
+.a6 {
+    margin-top: -23px;
+    padding-left: 48px;
+}
+
+.camera_pag {
+    bottom: 7px;
+    position: absolute;
+    right: 8px;
+    z-index: 99999;
+}
+
+.camera_wrap .camera_pag .camera_pag_ul li {
+    cursor: pointer;
+    text-indent: -9999px;
+}
+
+.camera_wrap .camera_pag .camera_pag_ul li {
+	height: 12px;
+	overflow: hidden;
+	position: relative;
+	transition: all 0.4s ease 0s;
+	float:left;
+	margin-left:5px;
+	display:block;
+	background:#d6d6d6;
+	width: 12px;
+}
+
+.camera_wrap .camera_pag .camera_pag_ul li:hover,
+.camera_wrap .camera_pag .camera_pag_ul li.cameracurrent {
+	background:#4e4d4d;
+}
+
+.camera_wrap .camera_pag .camera_pag_ul li > span {
+	display:block;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+
+
+.camera_target_content {
+	display:none;
+}
+}

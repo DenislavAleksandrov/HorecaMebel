@@ -1,0 +1,137 @@
+﻿﻿@model HorecaMebel.Models.Home.IndexViewModel
+@using HorecaMebel.Resources
+@{
+    ViewBag.Title = "Home Page";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header class="p6">
+    <div class="container_24">
+        <div class="clear"></div>
+
+        <div class="page1-box2">
+            <div class="inner1">
+                <article class="grid_12">
+                    <div class="inner-block">
+                        <div class="camera_wrap camera_azure_skin" id="camera">
+                            @if (Model.Promotions != null)
+                            {
+                                foreach (var promotion in Model.Promotions)
+                                {
+                                    <div data-src="@promotion.ProductImage">
+                                        <div class="camera_caption pos2 fadeFromBottom">
+                                            <a href="@promotion.ProductURL"><span class="text1 a4" style="color:#6ABB18">@promotion.ProductName</span></a>
+                                            <span class="text2 a5" style="color:red">@promotion.Text2</span>
+                                            <span class="text3 a6" style="color:red">@promotion.Price</span>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </article>
+                <div class="thumb">
+                    <article class="grid_6">
+                        <div class="inner-block">
+                            <div class="page1-box1 maxheight">
+                                <figure class="page1-img1">
+                                    @*<img src="~/images/page1-img1.jpg" alt="">*@
+                                    <img src="~/images/HomePage/SesselRING.jpg" alt="Sessel" title="Sessel" />
+                                </figure>
+                                <a class="button1" href="/ArmchairsApp/List"><span></span>@Resources.Armchairs</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="grid_6">
+                        <div class="inner-block">
+                            <div class="page1-box1 maxheight">
+                                <figure class="page1-img1">
+                                    <img src="~/images/HomePage/Sofasss.jpeg" alt="Sofa" title="Sofa" />
+                                    @*<img src="~/images/page1-img2.jpg" alt="">*@
+                                </figure>
+                                <a class="button1" href="/SofasApp/List"><span></span>@Resources.Sofas</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="grid_6">
+                        <div class="inner-block">
+                            <div class="page1-box1 maxheight">
+                                <figure class="page1-img1">
+                                    <img src="~/images/HomePage/Sitzwuerfel.jpg" alt="Sitzwuerfel" title="Sitzwuerfel" />
+
+                                    @*<img src="~/images/page1-img3.jpg" alt="">*@
+                                </figure>
+                                <a class="button1" href="/CubeSeatsApp/List"><span></span>@Resources.CubeSeats</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="grid_6">
+                        <div class="inner-block">
+                            <div class="page1-box1 maxheight">
+                                <figure class="page1-img1">
+                                    <img src="~/images/HomePage/Stollll.jpg" alt="Stühle" title="Stühle" />
+                                    @*<img src="~/images/page1-img4.jpg" alt="">*@
+
+                                </figure>
+                                <a class="button1" href="/ChairsApp/List"><span></span>@Resources.Chairs</a>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="content" class="p7">
+    <div class="container_24">
+        <div class="wrapper">
+
+            <article class="grid_24">
+                <div class="inner-block">
+                    <div class="p10 maxheight2">
+                        <p class="p8">Herzlich Willkommen!</p>
+                        <div class="page1-box3 last3">
+                            <h2 style="display:none">Gastronomieeinrichtung</h2>
+                            <h2 style="display:none">Gastronomiemöbel für Restaurants, Hotels, Cafes</h2>
+                            <h2 style="display:none">Restaurantstühle</h2>
+                            <h2 style="display:none">Gastronomiestühle</h2>
+                            <h2 style="display:none">Gastronomie Bänke</h2>
+                            <h3 style="display:none">Cocktailsessel</h3>
+                            <h3 style="display:none">Loungemöbel</h3>
+                            <h4 style="display:none">Hotelmöbel</h4>
+                            <h4 style="display:none">Gastronomiemöbel und Hotelmöbel nach Maß</h4>
+                            <span class="text4">
+                                Horecamoebel.de - der Online-Shop für Gastronomie Stühle, Polsterbänke, Restaurantmöbel und Objekteinrichtung.
+                            </span>
+                            <p>
+                                Unser Unternehmen ist ein führender Anbieter von <h2>Gastronomiemöbel für Restaurants, Hotels, Cafes</h2>, Kantine oder auch Konferenzbereich.
+                            </p>
+                            <p>
+                                Wir sind Ihr kompetenter Partner für cleveren Einkauf von Möbeln - Restaurantstühle, Gastronomiestühle, Gastronomie Bänke, Cocktailsessel, Loungemöbel, Polstergruppen und Hotelmöbel.
+                                Aufgrund unserer über 20-jährigen Erfahrung bieten wir ausgewählte Qualitätsprodukte für gewerbliche Kunden zu einzigartigen
+                                Top-Preisen und Top-Qualität an.
+                                Ab sofort produzieren wir auch zahlreiche Gastronomie Bänke und Polsterbänke für Restaurant, Wartezimmer, Lobby oder Kneipe.
+                                Unsere Sitzbänke werden in einer Standardbreite
+                                von 100/120/180cm hergestellt und bieten neben Stabilität einen maximalen Nutzungs- und Sitzkomfort an. Durch die umfangreiche Kunstleder- und Farbauswahl können Sie Ihren
+                                Gastronomie Bank je nach Ambiente und Design individuell einrichten.
+                            </p>
+                            <p>
+                                Gerne helfen wir Ihnen auch bei der Zusammensetzung einer vollständigen Einrichtung mit hochwertigen und bequemen Möbeln.
+                                Als Möbelhersteller und Großhändler produzieren wir auch auf Anfrage verschiedene Gastronomiemöbel und Hotelmöbel nach Maß. In diesem Zusammenhang arbeiten wir natürlich mit zahlreichen renommierten Architekten, Objekteinrichter und Inneneinrichter zusammen. Natürlich die beliebteste Restaurantmöbel können Sie direkt von unserem Lager haben.
+                            </p>
+                            <p>
+                                Sie können bei horecamoebel.de Tag und Nacht online einkaufen.
+                                Besuchen Sie unseren Online Shop und lassen Sie sich zum Kauf von unseren Möbeln inspirieren!
+                            </p>
+
+                            <small><i>* Wir verkaufen ausschließlich an Gewerbetreibende, alle Preise verstehen sich zzgl. 19% MwSt. und es gelten unsere AGB.</i></small>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,47 @@
+﻿@model HorecaMebel.Areas.Administration.Models.ViewModels.CubeSeat.CubeSeatsViewModel
+
+@{
+    ViewBag.Title = "Cube Seat Index";
+}
+
+
+<div class="main-content">
+    <div class="wrapper">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Reduce Price</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            @foreach (var cubeSeat in Model.CubeSeat)
+            {
+                <tr>
+                    <td>@cubeSeat.Name</td>
+                    <td>€ @cubeSeat.Price</td>
+                    @if (cubeSeat.NewPrice.HasValue)
+                    {
+                        <td>€ @cubeSeat.NewPrice</td>
+                    }
+                    else
+                    {
+                        <td>-</td>
+                    }
+
+                    <td><img src="@cubeSeat.ImagePath" height="100" width="100" /></td>
+                    <td>@cubeSeat.Description</td>
+                    <td><a class="action-btn" href="/Administration/CubeSeat/Edit/@cubeSeat.id">Edit</a></td>
+                    <td><a class="action-btn" href="/Administration/CubeSeat/Delete/@cubeSeat.id">Delete</a></td>
+                </tr>
+            }
+        </table>
+
+        <div class="clearfix">
+            <a class="action-btn" href="/Administration/CubeSeat/New">CREATE NEW CUBE SEAT</a>
+        </div>
+
+    </div>
+</div>

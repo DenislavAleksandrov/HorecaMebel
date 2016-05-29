@@ -1,0 +1,76 @@
+﻿@model  HorecaMebel.Areas.Administration.Models.ViewModels.EditPromotionViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="main-content">
+    <div class="wrapper">
+
+        <label>Image*</label>
+        <div class="row">
+            <div class="images-placeholder new">
+                <div class="main" data-selector="ImageContainer"><img src="@Model.Promotion.ProductImage"/></div>
+            </div>
+            <div>
+                <div class="upload-file form-upload">
+                    <input type="file" name="file" data-selector="fileUploadValue" value="@Model.Promotion.ProductImage"/>
+
+                    <span class="error" data-selector="imageFiledError">&nbsp;</span>
+                </div>
+
+                <input type="button" value="Upload" data-selector="BtnUploadImage" class="action-btn upload" />
+
+            </div>
+
+        </div>
+
+        <label for="contactPersonPosition">Name*</label>
+        <div class="row">
+            <input type="text" id="contactPersonPosition" data-selector="PromotionName" value="@Model.Promotion.Name"/>
+            <span class="error" data-selector="PromotionNameError"></span>
+        </div>
+
+        <label for="contactPersonPosition">Product Name*</label>
+        <div class="row">
+            <input type="text" id="contactPersonPosition" data-selector="Text1" value="@Model.Promotion.ProductName" />
+            <span class="error" data-selector="Text1Error"></span>
+        </div>
+
+        <label for="contactPersonEmail">TEXT 2*</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Text2" value="@Model.Promotion.Text2"  />
+            <span class="error" data-selector="Text2Error"></span>
+        </div>
+
+        <label for="contactPersonEmail">Price *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Text3" value="@Model.Promotion.Price" />
+            <span class="error" data-selector="Text3Error"></span>
+        </div>
+
+        <label for="contactPersonEmail">Product URL *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="ProductUrl" value="@Model.Promotion.ProductURL" />
+            <span class="error" data-selector="ProductUrlError"></span>
+        </div>
+
+        <div class="clearfix">
+            <a class="action-btn" data-selector="Save">SAVE</a>
+        </div>
+    </div>
+</div>
+
+<script src="~/Areas/Administration/Script/Promotions/PromotionEdit.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        PromotionEdit.Init('@Model.Promotion.id',JSON.parse(JSON.stringify(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject((Model.Promotion.ProductImage))))));
+
+        document.onkeydown = function (event) {
+            if (event.keyCode == 13) {
+                PromotionEdit.Save();
+            }
+        }
+    });
+</script>

@@ -1,0 +1,46 @@
+﻿@model HorecaMebel.Areas.Administration.Models.ViewModels.Sofa.SofasViewModel
+
+@{
+    ViewBag.Title = "Sofa Index";
+}
+
+<div class="main-content">
+    <div class="wrapper">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Reduce Price</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            @foreach (var sofas in Model.AllSofas)
+            {
+                <tr>
+                    <td>@sofas.Name</td>
+                    <td>€ @sofas.Price</td>
+                    @if (sofas.NewPrice.HasValue)
+                    {
+                        <td>€ @sofas.NewPrice</td>
+                    }
+                    else
+                    {
+                        <td>-</td>
+                    }
+
+                    <td><img src="@sofas.ImagePath" height="100" width="100" /></td>
+                    <td>@sofas.Description</td>
+                    <td><a class="action-btn" href="/Administration/Sofas/Edit/@sofas.id">Edit</a></td>
+                    <td><a class="action-btn" href="/Administration/Sofas/Delete/@sofas.id">Delete</a></td>
+                </tr>
+            }
+        </table>
+
+        <div class="clearfix">
+            <a class="action-btn" href="/Administration/Sofas/New">CREATE NEW SOFA</a>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,137 @@
+﻿@model HorecaMebel.Areas.Administration.Models.ViewModels.CubeSeat.CubeSeatEditViewModel
+@{
+    ViewBag.Title = "Cubbe Seat Edit";
+}
+
+<div class="main-content">
+    <div class="wrapper">
+
+        <label>Image*</label>
+        <div class="row">
+            <div class="images-placeholder new">
+                <div class="main" data-selector="ImageContainer"><img src="@Model.CubeSeat.ImagePath"/></div>
+            </div>
+            <div>
+                <div class="upload-file form-upload">
+                    <input type="file" name="file" data-selector="fileUploadValue" />
+
+                    <span class="error" data-selector="imageFiledError">&nbsp;</span>
+                </div>
+
+                <input type="button" value="Upload" data-selector="BtnUploadImage" class="action-btn upload" />
+
+            </div>
+        </div>
+
+        <label for="contactPersonPosition">Name*</label>
+        <div class="row">
+            <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.CubeSeat.Name"/>
+            <span class="error" data-selector="NameError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Price *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Price" value="@Model.CubeSeat.Price" />€
+            <span class="error" data-selector="PriceError"></span>
+        </div>
+
+        @if(Model.CubeSeat.NewPrice.HasValue)
+        { 
+            <label for="contactPersonEmail">Reduced Price</label>
+            <div class="row">
+                <input type="text" id="contactPersonEmail" data-selector="ReducedPrice" value="@Model.CubeSeat.NewPrice.Value" />€
+                <span class="error" data-selector="ReducedPriceError"></span>
+            </div>
+        }
+        else
+        { 
+            <label for="contactPersonEmail">Reduced Price</label>
+            <div class="row">
+                <input type="text" id="contactPersonEmail" data-selector="ReducedPrice"/>€
+                <span class="error" data-selector="ReducedPriceError"></span>
+            </div>
+        }
+
+        <label for="contactPersonEmail">Description</label>
+        <div class="row">
+            <textarea id="contactPersonEmail" data-selector="Description">@Model.CubeSeat.Description</textarea>
+            <span class="error" data-selector="DescriptionError"></span>
+        </div>
+
+
+        <label for="contactPersonEmail">Frame *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="WoodenFrame" value="@Model.CubeSeat.WoodenFrame"/>
+            <span class="error" data-selector="WoodenFrameError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Seat *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Seat" value="@Model.CubeSeat.Seat"/>
+            <span class="error" data-selector="SeatError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Width *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Width" value="@Model.CubeSeat.Width"/>cm
+            <span class="error" data-selector="WidthError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Height *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Height" value="@Model.CubeSeat.Height" />cm
+            <span class="error" data-selector="HeightError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Depth *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Depth" value="@Model.CubeSeat.Depth" />cm
+            <span class="error" data-selector="DepthError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Skin *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Skin" value="@Model.CubeSeat.Skin" />
+            <span class="error" data-selector="SkinError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Skin Colour*</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="SkinColour" value="@Model.CubeSeat.SkinColour"/>
+            <span class="error" data-selector="SkinColourError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Legs *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Legs" value="@Model.CubeSeat.Legs" />
+            <span class="error" data-selector="LegsError"></span>
+        </div>
+
+
+        <label for="contactPersonEmail">Production *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="ProductionTime" value="@Model.CubeSeat.ProductionTime" />
+            <span class="error" data-selector="ProductionTimeError"></span>
+        </div>
+
+        <div class="clearfix">
+            <a class="action-btn" data-selector="Save">SAVE</a>
+
+            <a class="action-btn" href="/Administration/CubeSeat/AddAditionalImagePage/@Model.CubeSeat.id">Add Aditional Images</a>
+        </div>
+    </div>
+</div>
+
+<script src="~/Areas/Administration/Script/CubeSeat/EditCubeSeat.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        EditCubeSeat.Init('@Model.CubeSeat.id',JSON.parse(JSON.stringify(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject((Model.CubeSeat.ImagePath))))));
+
+        document.onkeydown = function (event) {
+            if (event.keyCode == 13) {
+                EditCubeSeat.Save();
+            }
+        }
+    });
+</script>

@@ -1,0 +1,139 @@
+﻿@model HorecaMebel.Areas.Administration.Models.ViewModels.Chair.EditChairViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="main-content">
+    <div class="wrapper">
+
+        <label>Image*</label>
+        <div class="row">
+            <div class="images-placeholder new">
+                <div class="main" data-selector="ImageContainer"><img src="@Model.Chair.ImagePath"/></div>
+            </div>
+            <div>
+                <div class="upload-file form-upload">
+                    <input type="file" name="file" data-selector="fileUploadValue" />
+
+                    <span class="error" data-selector="imageFiledError">&nbsp;</span>
+                </div>
+
+                <input type="button" value="Upload" data-selector="BtnUploadImage" class="action-btn upload" />
+
+            </div>
+        </div>
+
+        <label for="contactPersonPosition">Name*</label>
+        <div class="row">
+            <input type="text" id="contactPersonPosition" data-selector="Name" value="@Model.Chair.Name"/>
+            <span class="error" data-selector="NameError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Price *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Price" value="@Model.Chair.Price" />€
+            <span class="error" data-selector="PriceError"></span>
+        </div>
+
+        @if (Model.Chair.NewPrice.HasValue)
+        { 
+            <label for="contactPersonEmail">Reduced Price</label>
+            <div class="row">
+                <input type="text" id="contactPersonEmail" data-selector="ReducedPrice" value="@Model.Chair.NewPrice.Value"/>€
+                <span class="error" data-selector="ReducedPriceError"></span>
+            </div>
+        }
+        else
+        {
+            <label for="contactPersonEmail">Reduced Price</label>
+            <div class="row">
+                <input type="text" id="contactPersonEmail" data-selector="ReducedPrice" value="" />€
+                <span class="error" data-selector="ReducedPriceError"></span>
+            </div>
+        }
+        
+
+        <label for="contactPersonEmail">Description</label>
+        <div class="row">
+            <textarea id="contactPersonEmail" data-selector="Description">@Model.Chair.Description</textarea>
+            <span class="error" data-selector="DescriptionError"></span>
+        </div>
+
+
+        <label for="contactPersonEmail">Frame *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="WoodenFrame" value="@Model.Chair.WoodenFrame"/>
+            <span class="error" data-selector="WoodenFrameError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Seat *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Seat" value="@Model.Chair.Seat" />
+            <span class="error" data-selector="SeatError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Skin</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Skin" value="@Model.Chair.Skin" />
+            <span class="error" data-selector="SkinError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Back *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Back" value="@Model.Chair.Back" />
+            <span class="error" data-selector="BackError"></span>
+        </div>
+
+
+        <label for="contactPersonEmail">Wood Color </label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="WoodColor" value="@Model.Chair.WoodColor" />
+            <span class="error" data-selector="WoodColorError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Width *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Width" value="@Model.Chair.Width" />cm
+            <span class="error" data-selector="WidthError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Height *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Height" value="@Model.Chair.Height" />cm
+            <span class="error" data-selector="HeightError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Depth *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="Depth" value="@Model.Chair.Depth" />cm
+            <span class="error" data-selector="DepthError"></span>
+        </div>
+
+        <label for="contactPersonEmail">Production *</label>
+        <div class="row">
+            <input type="text" id="contactPersonEmail" data-selector="ProductionTime" value="@Model.Chair.ProductionTime" />
+            <span class="error" data-selector="ProductionTimeError"></span>
+        </div>
+
+        <div class="clearfix">
+            <a class="action-btn" data-selector="Save">SAVE</a>
+            <a class="action-btn" href="/Administration/Chairs/AddAditionalImagePage/@Model.Chair.id">Add Aditional Images</a>
+        </div>
+
+    </div>
+</div>
+
+<script src="~/Areas/Administration/Script/Chairs/ChairEdit.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        ChairEdit.Init('@Model.Chair.id',JSON.parse(JSON.stringify(@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject((Model.Chair.ImagePath))))));
+
+        document.onkeydown = function (event) {
+            if (event.keyCode == 13) {
+                ChairEdit.Save();
+            }
+        }
+    });
+</script>

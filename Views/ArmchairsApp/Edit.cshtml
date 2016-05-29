@@ -1,0 +1,166 @@
+﻿@model HorecaMebel.Models.Armchairs.EditArmchair
+@using HorecaMebel.Resources
+
+@{
+    IEnumerable<string> frameOptions = Model.Armchair.WoodenFrame.Split(',');
+
+    IEnumerable<string> seatOptions = Model.Armchair.Seat.Split(',');
+
+    IEnumerable<string> backOptions = Model.Armchair.Back.Split(',');
+
+    IEnumerable<string> skinOptions = Model.Armchair.Skin.Split(',');
+
+    IEnumerable<string> skinColourOptions = Model.Armchair.SkinColour.Split(',');
+    
+    IEnumerable<string> legsOptions = Model.Armchair.Legs.Split(',');
+}
+<link href="~/Content/touchTouch.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.ui.totop.js"></script>
+<script src="~/Scripts/touchTouch.jquery.js"></script>
+
+<section id="content">
+    <div class="container_24">
+        <div class="wrapper">          
+            <article class="grid_24">
+                <div class="p11">                    
+                    <article class="grid_14 alpha">
+                        <div class="inner-block">
+                            <figure class="page2-img1">
+                                <a class="page4-img1 magnifier" href="@Model.Armchair.ImagePath">
+                                    <img class="page4-img1" src="@Model.Armchair.ImagePath" alt="">
+                                    <span></span>
+                                </a>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article class="grid_10 omega">                        
+                        <div>
+                            <article class="grid_10 alpha">
+                                <div>
+                                    <div class="floatleft"><h1 style="margin-top:0px !important">@Model.Armchair.Name.ToUpper()</h1></div>
+                                    
+                                    @if (!Model.Armchair.NewPrice.HasValue)
+                                    {
+                                        <div class="floatright">
+                                            <h1 style="margin-top:0px !important">@Model.Armchair.Price € *</h1>
+                                            <small>@Resources.PriceDescriptionText</small><br />
+                                            <small style="margin-top:0px !important">@Model.Armchair.ProductionTime</small>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="floatright">
+                                            <h1 style="margin-top:0px !important; text-decoration:line-through">@Model.Armchair.Price € *</h1>
+
+
+                                            <h1 style="color:red; margin-top:0px !important">@Resources.NewPrice: @Model.Armchair.NewPrice € *</h1>
+                                            
+                                            <small>@Resources.PriceDescriptionText</small><br />
+                                            <small style="margin-top:0px !important">@Model.Armchair.ProductionTime</small>
+                                        </div>
+                                    }          
+                                </div>
+
+                                <div class="clearfix"></div>                                                                                                                         
+
+                                <h6 style="padding-bottom:5px !important;margin-top:25px !important">@Resources.SkinOptions *</h6>
+                                <div style="height:35px">
+                                    <select class="w100 h100" data-selector="skinOptionsElement">
+                                        <option selected="selected" value="-1">@Resources.ComboBoxDelimiter @Resources.PleaseSelect @Resources.ComboBoxDelimiter</option>
+                                        @foreach (string element in skinColourOptions)
+                                        {
+                                            <option value="@element">@element</option>
+                                        }
+                                    </select>
+                                    <small data-selector="skinOptionsError"></small>
+                                </div>                                                                      
+                                     
+                                <h6 style="padding-bottom:5px !important;margin-top:25px !important">@Resources.Count *</h6>
+                                <div style="height:35px">
+                                    <select class="w100 h100" data-selector="countElement">
+                                        <option selected="selected" value="-1">@Resources.ComboBoxDelimiter @Resources.PleaseSelect @Resources.ComboBoxDelimiter</option>                                     
+                                        @for (int i = Model.MinAmountForOrderArmchair; i <= 600; i++)
+                                        {
+                                            <option value="@i">@i</option>
+                                        }     
+                                    </select>
+                                    <small data-selector="countError"></small>
+                                </div>   
+                                                            
+                            </article>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div style="margin-top:20px">
+                            <div class="search-buttonCustom" style="cursor:pointer" data-selector="BtnAddInBasket">@Resources.AddInBasket</div>
+                            <div class="clearfix"></div>
+                            <span class="time1Custom" style="margin-top:10px;" data-selector="AddElementInBasket"></span>
+                        </div>
+                       
+                        <div class="clearfix"></div>
+
+                        <div style="margin-top:80px">
+
+                            @if (Model.ArmchairAdditionImagesPaths != null && Model.ArmchairAdditionImagesPaths.Count > 0)
+                            {
+                                foreach (var image in Model.ArmchairAdditionImagesPaths)
+                                {
+                                        <div class="page2-img1 floatleft" style="width:123px;height:150px; margin-top:5px;margin-right:5px;">
+                                            <a class="page4-img1 magnifier" href="@image">
+                                                <img class="page4-img1" src="@image" alt="" style="width:123px;height:150px; margin-top:5px;" />
+                                                <span></span>
+                                            </a>
+                                        </div>                                                                        
+                                }
+                            }
+                        </div>
+
+                    </article>
+                </div>
+            </article>
+
+            <article class="grid_24">
+                @if (!String.IsNullOrEmpty(Model.Armchair.Descrption))
+                {
+                    <div><span class="time1Custom">@Resources.Description</span><p class="marginleft20 time1Custom">@Html.Raw(Model.Armchair.Descrption)</p></div>
+                }
+                
+                <br/>
+
+                <div><span class="time1Custom">@Resources.Width: @Model.Armchair.Width cm</span></div>
+
+                <div><span class="time1Custom">@Resources.Height: @Model.Armchair.Height cm</span></div>
+
+                <div><span class="time1Custom">@Resources.Depth: @Model.Armchair.Depth cm</span></div>
+
+                <br/>
+
+                <div><span class="time1Custom">@Resources.FrameOptions: @Model.Armchair.WoodenFrame</span></div>
+
+                <div><span class="time1Custom">@Resources.SeatOptions: @Model.Armchair.Seat</span></div>
+
+                <div><span class="time1Custom">@Resources.BackOptions: @Model.Armchair.Back</span></div>
+               
+                <div><span class="time1Custom">@Resources.SkinOptions: @Model.Armchair.Skin</span></div>
+
+                <div><span class="time1Custom">@Resources.LegOptions: @Model.Armchair.Legs</span></div>
+                
+
+            </article>
+        </div>
+    </div>
+</section>
+
+<script src="~/Scripts/Project/Armchairs/ArmchairEdit.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+       
+        $().UItoTop({ easingType: 'easeOutQuart' });
+        jQuery('.magnifier').touchTouch();
+
+        ArmchairEdit.Init('@Model.Armchair.id', '@Html.Raw(Resources.ProvideCorrectValue)');
+    });
+		
+</script>

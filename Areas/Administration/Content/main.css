@@ -1,0 +1,534 @@
+﻿
+/* new clearfix */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+html, body {
+    height: 100%;
+}
+body {
+    font-size: 16px;
+    font-family: 'Helevetica Neue', Arial, sans-serif;
+    min-width: 1145px;
+}
+a {
+    cursor:pointer;
+    color: #0001fd;
+    text-decoration: none;
+}
+p {
+    margin: 10px 0;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.container {
+    min-height: 100%;
+    position: relative;
+}
+#body {
+    padding-bottom: 253px;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #00ffe6;
+    height: 253px;
+    margin-top: 75px;
+}
+.wrapper, .header-wrapper {
+    width: 1145px;
+    margin: 0 auto;
+}
+header nav li {
+    float: left;
+}
+.top-navigation {
+    background: #00ffe6;
+    color: #0001fd;
+    padding: 7px 0;
+    overflow: hidden;
+}
+.top-navigation ul {
+    float: right;
+}
+.top-navigation li {
+    margin-left: 20px;
+}
+.top-navigation a {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.top-navigation .newsletter a {
+    padding: 0 37px 0 0;
+}
+
+.main-navigation {
+    background-color: #fff;
+    overflow: hidden;
+    width: 100%;
+    padding: 37px 0 8px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.main-navigation nav {
+    display: inline-block;
+}
+.main-navigation li {
+    margin-left: 20px;
+    border: 2px solid #0001fd;
+}
+.main-navigation a {
+    padding: 2px 10px;
+}
+.main-navigation li a {
+    display: block;
+}
+.mainnew {
+    float: left;
+    width: 230px;
+}
+.main-navigation li a.active, .main-navigation li a:hover, .main-navigation li a:focus {
+    background: #0001fd;
+    color: #fff;
+    outline: none;
+}
+.sign-out {
+    float: right;
+}
+.sign-out a {
+    display: inline-block;
+    background: #ffff78;
+    margin: 0 0 0 10px;
+    padding: 4px 10px;
+}
+.sign-out span {
+    display: inline-block;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 150px;
+    color:#c8c8c8;
+    font-weight: normal;
+    position: relative;
+    top: 4px;
+}
+.breadcrumb {
+    background: #fafafa;
+    padding: 20px 0;
+}
+.breadcrumb h1 {
+    font-size: 23px;
+    font-weight: normal;
+    margin: 0;
+}
+.submenu {
+    padding: 30px 0;
+    min-height: 35px;
+    overflow: hidden;
+}
+.action-btn {
+    float: left;
+    border: 3px solid #00ffe6;
+    padding: 2px 12px;
+    font-size: 21px;
+    font-weight: 500;
+    color: #0001fd;
+    background: none;
+    margin: 0 12px 0 0;
+    min-width: 78px;
+    text-align: center;
+}
+.action-btn:hover, .action-btn:focus {
+    background: #00ffe6;
+}
+.main-content {
+    background: #fafafa;
+    padding: 38px 0 100px;
+    overflow: hidden;
+}
+.main-content h2, .login h1 {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 16px 0 20px;
+}
+.view-subpages {
+    float: right;
+}
+.view-subpages a, .login-btn {
+    float: left;
+    padding: 3px 18px 4px;
+    color: #c8c8c8;
+    border: 2px solid #c8c8c8;
+    margin: 0 0 0 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.view-subpages a.active, .view-subpages a:hover, .view-subpages a:focus {
+    color: #fff;
+    background: #c8c8c8;
+}
+.main-content table {
+    width: 1155px;
+    margin: 0 -5px;
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+.main-content table th, .main-content table td {
+    text-align: left;
+    padding: 7px 15px;
+}
+.main-content table th {
+    background: #c8c8c8;
+    color: #fff;
+    font-weight: 500;
+}
+.main-content table td {
+    background: #fff; 
+}
+table td.reduced-price, table th.reduced-price {
+    background: #ffff78;
+    color: #0001fd;
+}
+table .actions {
+    min-width: 140px;
+}
+table .reduced-price, table .price {
+    min-width: 80px;
+}
+.pagination {
+    margin: 30px 0 0 0;
+    overflow: hidden;
+}
+.pagination li {
+    float: left;
+    margin: 0 10px 0 0;
+}
+.pagination a {
+    cursor: pointer;
+    color: #000;
+}
+.pagination a.active {
+    font-size: 18px;
+    position: relative;
+    bottom: 2px;
+}
+.row {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+label, .label {
+    float: left;
+    width: 115px;
+    font-weight: 500;
+    position: relative;
+    top: 10px;
+}
+.row label {
+    vertical-align: top;
+    margin: 5px 0 0 0;
+}
+.block-label, .row .block-label {
+    display: block;
+    float: none;
+    position: static;
+    margin: 0 0 12px 0;
+}
+input[type="text"], input[type="number"], input[type="url"], input[type="password"], textarea, select {
+    border: none;
+    padding: 5px;
+}
+input[type="text"], input[type="number"], input[type="password"], textarea {
+    width: 410px;
+}
+select {
+    width: 420px;
+    height: 35px;
+    line-height: 30px;
+}
+input[type="text"], input[type="number"], input[type="url"], input[type="password"] {
+    height: 25px;
+}
+textarea {
+    height: 170px;
+    resize: vertical;
+}
+.product-btns {
+    overflow: hidden;
+    margin: 0 0 0 118px;
+}
+input[type="url"], input.remote-server {
+    width: 298px;
+    float: left;
+}
+.left {
+    float: left;
+    width: 540px;
+}
+.right {
+    margin: 0 0 0 600px;
+}
+.images-placeholder {
+    display: inline-block;
+    margin: 6px 0 28px 0;
+}
+    .images-placeholder.new {
+        background-color:#fff;
+    }
+.images-placeholder .main, .images-placeholder .aside div {
+    /*background-color: #fff;*/
+    overflow: hidden;
+}
+.images-placeholder .main {
+    float: left;
+    width: 230px;
+    height: 301px;
+    background: #fff;
+}
+.images-placeholder .main img {
+    display: block;
+    line-height: 301px;
+    text-align: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+.images-placeholder .main span {
+    display: inline-block;
+    margin: 130px 0 0 69px;
+}
+.images-placeholder .aside {
+    margin-left: 238px;
+    width: 70px;
+}
+.images-placeholder .aside div {
+    height: 95px;
+    margin-bottom: 8px;
+}
+.products-new .left {
+    padding: 38px 0 0;
+}
+.products-new .product-info {
+    margin: 38px 0 0;
+}
+.product-show .label {
+    position: static;
+}
+.product-show .row .value {
+    margin-left: 115px;
+}
+.action-btn.load, .action-btn.upload {
+    margin: 0 0 0 18px;
+}
+.block-label.upload-file {
+    margin: 20px 0 4px;
+}
+.upload-file {
+    float: left;
+    width: 308px;
+    position: relative;
+    top: 8px;
+    padding-bottom: 35px;
+}
+.items-on-page {
+    margin-bottom: 20px;
+}
+.items-on-page a {
+    cursor: pointer;
+}
+.items-on-page a:before {
+    content: "/ ";
+    color: #000;
+}
+.items-on-page a:first-child:before {
+    content: " ";
+}
+.items-on-page a.active {
+    font-weight: bold;
+    cursor: default;
+}
+.login {
+    width: 212px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 60px 50px;
+    background: #fafafa;
+}
+.login input {
+    width: 200px;
+}
+.login .login-btn {
+    width: 210px;
+    margin: 20px 0 0;
+    padding: 6px;
+    border: none;
+    color: #000; 
+}
+.error {
+    color: #ff0000;
+    font-size: 13px;
+    margin: 5px 0 0 0;
+}
+.ml115 {
+    margin-left:100px;
+}
+.page-content {
+    overflow: hidden;
+}
+.nav-strip {
+    clear: both;
+    margin: 50px 0 0 0;
+}
+.statistics {
+    margin: 40px 0 0;
+}
+.statistics .label {
+    position: static;
+}
+.placeholder {
+    color: #aaa;
+}
+.url {
+    display: inline-block;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+}
+.upload-file p {
+    font-size: 14px;
+    color: #c8c8c8;
+}
+
+
+/* Dashboard */
+
+.dashboard .left {
+    width: 407px;
+}
+.dashboard h2 {
+    font-size: 21px;
+}
+.dashboard-statistics {
+    margin: 78px 0 0 0;
+}
+.dashboard-statistics .row {
+    margin: 0 0 24px 0;
+}
+.dashboard-statistics .month-value, .dashboard-statistics .year-value {
+    font-weight: 500;
+    margin: 0 15px 0 0;
+}
+.dashboard-statistics .month-value {
+    font-size: 36px;
+    line-height: 31px; 
+}
+.dashboard-statistics .month-text {
+    font-size: 18px;
+}
+.dashboard-statistics .year-value, .dashboard-statistics .year-text {
+    font-size: 14px;
+}
+.dashboard .products {
+    margin: 0 0 0 355px;
+}
+
+/* Cycle slideshow */
+
+.bubbles-carousel, .clicks-carousel {
+    position: relative;
+    background: #fff;
+    padding: 16px 59px;
+    margin: 0 0 15px 0;
+}
+.cycle-slideshow {
+    margin: 10px auto;
+    padding:0;
+    position: relative;
+    width: 100%;
+    background: #fff;
+}
+.cycle-slideshow  .slide-content {
+    position: relative;
+    height: 212px;
+    border: 1px solid #f5f5f5;
+    margin: 0 4px;
+    overflow: hidden;
+    text-align: center;
+}
+.carousel-nav-btns {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    width: 672px;
+}
+.carousel-nav-btns a {
+    width: 26px;
+    height: 30px;
+    text-indent: -9999px;
+    position: absolute;
+    outline: none;
+}
+
+.slide-content .reduced-price-icon {
+    position: absolute;
+    top: 8px;
+    right: 6px;
+}
+.reduced-price-icon span {
+    display: inline-block;
+    min-width: 64px;
+    max-width: 70px;
+    height: 43px;
+    overflow: hidden;
+    text-align: center;
+    color: #0001fd;
+    white-space: normal;
+    position: relative;
+    top: 9px;
+    left: auto;
+    font-size: 13px;
+    font-weight: 500;
+}
+.reduced-price-icon span strong {
+    font-size: 21px;
+    font-weight: 500;
+}
+.slide-content img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+.slide-content .product-info {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}
+.slide-content .product-info h3 {
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}

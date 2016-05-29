@@ -1,0 +1,193 @@
+﻿@model HorecaMebel.Models.Chairs.EditChairViewModel
+
+@using HorecaMebel.Resources
+
+@{
+    IEnumerable<string> frameOptions = (!String.IsNullOrEmpty(Model.Chair.WoodenFrame)) ? Model.Chair.WoodenFrame.Split(',').ToList() : new List<string>();
+
+    IEnumerable<string> seatOptions = (!String.IsNullOrEmpty(Model.Chair.Seat)) ? Model.Chair.Seat.Split(',').ToList() : new List<string>();
+
+    IEnumerable<string> backOptions = (!String.IsNullOrEmpty(Model.Chair.Back)) ? Model.Chair.Back.Split(',').ToList() : new List<string>();
+
+    //IEnumerable<string> woodColor = Model.Chair.WoodColor.Split(',');
+
+    IEnumerable<string> skinColour = new List<string>();
+    if (!String.IsNullOrEmpty(Model.Chair.Skin))
+    {
+        skinColour = Model.Chair.Skin.Split(',');
+    }
+}
+
+<link href="~/Content/touchTouch.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.ui.totop.js"></script>
+<script src="~/Scripts/touchTouch.jquery.js"></script>
+
+<section id="content">
+    <div class="container_24">
+        <div class="wrapper">
+            <article class="grid_24">
+                <div class="p11">
+
+                    <article class="grid_12 alpha">
+                        <div class="inner-block">
+                            <figure class="page2-img1">
+                                <a class="page4-img1 magnifier" href="@Model.Chair.ImagePath">
+                                    <img class="page4-img1" src="@Model.Chair.ImagePath" alt="">
+                                    <span></span>
+                                </a>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article class="grid_12 omega">
+                        <div>
+                            <article class="grid_12 alpha">
+                                <div>
+                                    <div class="floatleft"><h1 style="margin-top:0px !important">@Model.Chair.Name.ToUpper()</h1></div>
+
+                                    @if (!Model.Chair.NewPrice.HasValue)
+                                    {
+                                        <div class="floatright">
+                                            <h1 style="margin-top:0px !important">@Model.Chair.Price € *</h1>
+                                            <small>@Resources.PriceDescriptionText</small><br />
+                                            <small style="margin-top:0px !important">@Model.Chair.ProductionTime</small>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="floatright">
+
+                                            <h1 style="margin-top:0px !important; text-decoration:line-through">@Model.Chair.Price € *</h1>
+                                            
+                                            <h1 style="color:red; margin-top:0px !important">@Resources.NewPrice: @Model.Chair.NewPrice € *</h1>
+                                            
+                                            <small>@Resources.PriceDescriptionText</small><br />
+                                            <small style="margin-top:0px !important">@Model.Chair.ProductionTime</small>
+                                        </div>
+                                    }
+                                </div>                                
+
+                                <div class="clearfix"></div>
+
+                                @*<h6 style="padding-bottom:5px !important;margin-top:25px !important">@Resources.WoodColor * </h6>
+                                <div style="height:35px">
+                                    <select class="w100 h100" data-selector="WoodColorOption">
+                                        <option selected="selected" value="-1">@Resources.ComboBoxDelimiter @Resources.PleaseSelect @Resources.ComboBoxDelimiter</option>
+                                        @foreach (string element in woodColor)
+                                        {
+                                            <option value="@element">@element</option>
+                                        }
+                                    </select>
+
+                                    <small data-selector="woodColorOptionError"></small>
+                                </div>*@
+
+                                @if (skinColour.Count() > 0)
+                                { 
+                                    <h6 style="padding-bottom:5px !important;margin-top:25px !important">@Resources.SkinOptions * </h6>
+                                    <div style="height:35px">
+                                        <select class="w100 h100" data-selector="skinColorOption">
+                                            <option selected="selected" value="-1">@Resources.ComboBoxDelimiter @Resources.PleaseSelect @Resources.ComboBoxDelimiter</option>
+                                            @foreach (string element in skinColour)
+                                            {
+                                                <option value="@element">@element</option>
+                                            }
+                                        </select>
+
+                                        <small data-selector="skinColorOptionError"></small>
+                                    </div>
+                                }                                
+                                
+
+
+                                <h6 style="padding-bottom:5px !important;margin-top:25px !important">@Resources.Count *</h6>
+                                <div style="height:35px">
+                                    <select class="w100 h100" data-selector="CountElement">
+                                        <option selected="selected" value="-1">@Resources.ComboBoxDelimiter @Resources.PleaseSelect @Resources.ComboBoxDelimiter</option>
+                                        @for (int i = Model.MinAmoutToOrderChair; i <= 600; i++)
+                                        {
+                                            <option value="@i">@i</option>
+                                        }
+                                    </select>
+
+                                    <small data-selector="countError"></small>
+                                </div>   
+
+                            </article>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div style="margin-top:20px">
+                            <div class="search-buttonCustom" style="cursor:pointer" data-selector="BtnAddInBasket">@Resources.AddInBasket</div>
+                            <div class="clearfix"></div>
+                            <span class="time1Custom" style="margin-top:10px;" data-selector="AddElementInBasket"></span>
+                        </div>
+                      
+                        <div class="clearfix"></div>
+
+                        <div style="margin-top:80px">
+
+                            @if (Model.AdditionalChairImages != null && Model.AdditionalChairImages.Count > 0)
+                            {
+                                foreach (var image in Model.AdditionalChairImages)
+                                {
+                                    <div class="page2-img1 floatleft" style="width:123px;height:150px; margin-top:5px;margin-right:5px;">
+                                        <a class="page4-img1 magnifier" href="@image">
+                                            <img class="page4-img1" src="@image" alt="" style="width:123px;height:150px; margin-top:5px;" />
+                                            <span></span>
+                                        </a>
+                                    </div>
+                                }
+                            }
+                        </div>
+
+                    </article>
+                </div>
+            </article>
+
+            <article class="grid_24">
+                @if (!String.IsNullOrEmpty(Model.Chair.Description))
+                {
+                    <div><span class="time1Custom">@Resources.Description</span>
+                        <p class="marginleft20 time1Custom">
+                            @Html.Raw(Model.Chair.Description)
+                        </p>
+                    </div>
+                }
+
+                <br />
+
+                <div><span class="time1Custom">@Resources.Width: @Model.Chair.Width cm</span></div>
+
+                <div><span class="time1Custom">@Resources.Height: @Model.Chair.Height cm</span></div>
+
+                <div><span class="time1Custom">@Resources.Depth: @Model.Chair.Depth cm</span></div>
+
+                <br />
+
+                <div><span class="time1Custom">@Resources.FrameOptions: @Model.Chair.WoodenFrame</span></div>
+
+                <div><span class="time1Custom">@Resources.SeatOptions: @Model.Chair.Seat</span></div>
+
+                <div><span class="time1Custom">@Resources.BackOptions: @Model.Chair.Back</span></div>
+
+                @if (!String.IsNullOrEmpty(Model.Chair.Skin))
+                { 
+                    <div><span class="time1Custom">@Resources.SkinOptions: @Model.Chair.Skin</span></div>                              
+                }
+            </article>
+        </div>
+    </div>
+</section>
+
+<script src="~/Scripts/Project/Chairs/ChairEdit.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+         
+        $().UItoTop({ easingType: 'easeOutQuart' });
+        jQuery('.magnifier').touchTouch();
+        ChairEdit.Init('@Html.Raw(Resources.ProvideCorrectValue)', '@Model.Chair.id','@skinColour.Count()');
+    });
+		
+</script>

@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HorecaMebelModelStoreContainer" CdmEntityContainer="HorecaMebelEntities">
+    <EntitySetMapping Name="UserTables">
+      <EntityTypeMapping TypeName="HorecaMebelModel.UserTable">
+        <MappingFragment StoreEntitySet="UserTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Promotions">
+      <EntityTypeMapping TypeName="HorecaMebelModel.Promotion">
+        <MappingFragment StoreEntitySet="Promotions">
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProductURL" ColumnName="ProductURL" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Text2" ColumnName="Text2" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chairs">
+      <EntityTypeMapping TypeName="HorecaMebelModel.Chair">
+        <MappingFragment StoreEntitySet="Chairs">
+          <ScalarProperty Name="SkinColour" ColumnName="SkinColour" />
+          <ScalarProperty Name="ProductionTime" ColumnName="ProductionTime" />
+          <ScalarProperty Name="Skin" ColumnName="Skin" />
+          <ScalarProperty Name="Depth" ColumnName="Depth" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="WoodColor" ColumnName="WoodColor" />
+          <ScalarProperty Name="Back" ColumnName="Back" />
+          <ScalarProperty Name="Seat" ColumnName="Seat" />
+          <ScalarProperty Name="WoodenFrame" ColumnName="WoodenFrame" />
+          <ScalarProperty Name="NewPrice" ColumnName="NewPrice" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Armchairs">
+      <EntityTypeMapping TypeName="HorecaMebelModel.Armchair">
+        <MappingFragment StoreEntitySet="Armchairs">
+          <ScalarProperty Name="SkinColour" ColumnName="SkinColour" />
+          <ScalarProperty Name="ProductionTime" ColumnName="ProductionTime" />
+          <ScalarProperty Name="Descrption" ColumnName="Descrption" />
+          <ScalarProperty Name="Legs" ColumnName="Legs" />
+          <ScalarProperty Name="Skin" ColumnName="Skin" />
+          <ScalarProperty Name="Back" ColumnName="Back" />
+          <ScalarProperty Name="Seat" ColumnName="Seat" />
+          <ScalarProperty Name="WoodenFrame" ColumnName="WoodenFrame" />
+          <ScalarProperty Name="Depth" ColumnName="Depth" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="NewPrice" ColumnName="NewPrice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CubeSeats">
+      <EntityTypeMapping TypeName="HorecaMebelModel.CubeSeat">
+        <MappingFragment StoreEntitySet="CubeSeat">
+          <ScalarProperty Name="SkinColour" ColumnName="SkinColour" />
+          <ScalarProperty Name="ProductionTime" ColumnName="ProductionTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="NewPrice" ColumnName="NewPrice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Depth" ColumnName="Depth" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Legs" ColumnName="Legs" />
+          <ScalarProperty Name="Skin" ColumnName="Skin" />
+          <ScalarProperty Name="Seat" ColumnName="Seat" />
+          <ScalarProperty Name="WoodenFrame" ColumnName="WoodenFrame" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sofas">
+      <EntityTypeMapping TypeName="HorecaMebelModel.Sofa">
+        <MappingFragment StoreEntitySet="Sofa">
+          <ScalarProperty Name="SkinColour" ColumnName="SkinColour" />
+          <ScalarProperty Name="ProductionTime" ColumnName="ProductionTime" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NewPrice" ColumnName="NewPrice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Legs" ColumnName="Legs" />
+          <ScalarProperty Name="Skin" ColumnName="Skin" />
+          <ScalarProperty Name="Back" ColumnName="Back" />
+          <ScalarProperty Name="Seat" ColumnName="Seat" />
+          <ScalarProperty Name="WoodenFrame" ColumnName="WoodenFrame" />
+          <ScalarProperty Name="Depth" ColumnName="Depth" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArmchairsAdditionalPhotoes">
+      <EntityTypeMapping TypeName="HorecaMebelModel.ArmchairsAdditionalPhoto">
+        <MappingFragment StoreEntitySet="ArmchairsAdditionalPhoto">
+          <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
+          <ScalarProperty Name="ArmchairId" ColumnName="ArmchairId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChairsAdditionalPhotoes">
+      <EntityTypeMapping TypeName="HorecaMebelModel.ChairsAdditionalPhoto">
+        <MappingFragment StoreEntitySet="ChairsAdditionalPhoto">
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="ChairId" ColumnName="ChairId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SofaAdditionalPhotoes">
+      <EntityTypeMapping TypeName="HorecaMebelModel.SofaAdditionalPhoto">
+        <MappingFragment StoreEntitySet="SofaAdditionalPhoto">
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="SofaId" ColumnName="SofaId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CubeSeatAdditionalPhotoes">
+      <EntityTypeMapping TypeName="HorecaMebelModel.CubeSeatAdditionalPhoto">
+        <MappingFragment StoreEntitySet="CubeSeatAdditionalPhoto">
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="CubeSeatId" ColumnName="CubeSeatId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArmchairsInOrders">
+      <EntityTypeMapping TypeName="HorecaMebelModel.ArmchairsInOrder">
+        <MappingFragment StoreEntitySet="ArmchairsInOrder">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="skin" ColumnName="skin" />
+          <ScalarProperty Name="armcharId" ColumnName="armcharId" />
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChairsInOrders">
+      <EntityTypeMapping TypeName="HorecaMebelModel.ChairsInOrder">
+        <MappingFragment StoreEntitySet="ChairsInOrder">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="woodColour" ColumnName="woodColour" />
+          <ScalarProperty Name="skin" ColumnName="skin" />
+          <ScalarProperty Name="chairId" ColumnName="chairId" />
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CubeSeatInOrders">
+      <EntityTypeMapping TypeName="HorecaMebelModel.CubeSeatInOrder">
+        <MappingFragment StoreEntitySet="CubeSeatInOrder">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="skin" ColumnName="skin" />
+          <ScalarProperty Name="cubeSeatId" ColumnName="cubeSeatId" />
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="HorecaMebelModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="OrderDateTime" ColumnName="OrderDateTime" />
+          <ScalarProperty Name="FullPrice" ColumnName="FullPrice" />
+          <ScalarProperty Name="DDSPrice" ColumnName="DDSPrice" />
+          <ScalarProperty Name="TransportPrice" ColumnName="TransportPrice" />
+          <ScalarProperty Name="FurniturePrice" ColumnName="FurniturePrice" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="order_Guid" ColumnName="order_Guid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SofasInOrders">
+      <EntityTypeMapping TypeName="HorecaMebelModel.SofasInOrder">
+        <MappingFragment StoreEntitySet="SofasInOrder">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="skin" ColumnName="skin" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="sofaId" ColumnName="sofaId" />
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="References">
+      <EntityTypeMapping TypeName="HorecaMebelModel.Reference">
+        <MappingFragment StoreEntitySet="References">
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
